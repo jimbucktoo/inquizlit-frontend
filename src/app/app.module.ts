@@ -7,23 +7,18 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { LoginComponent } from './login/login.component';
 
-const appRoutes: Routes = [
-  { path: 'questions', component: QuestionsComponent },
-  { path: 'login',      component: LoginComponent },
-];
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    QuestionsComponent,
-    LoginComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        QuestionsComponent,
+        LoginComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
