@@ -1,27 +1,58 @@
-# InquizlitFrontend
+# inQuizlit
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
+inQuizlit is a full stack application created to allow users to post tech interview questions and then crowd source answers from other users. The answers are then sorted using Reddit's sorting algorithm.
 
-## Development server
+##Links
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* [inQuizlit](https://heroku.com/) - inQuizlit official website.
+* [inQuizlit Front-End Repository](https://github.com/jimbucktoo/inquizlit-frontend) - inQuizlit front-end Github repository.
+* [inQuizlit Back-End Repository](https://github.com/keschaefer/inquizlit-backend) - inQuizlit back-end Github repository.
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-## Build
+### Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+What things you need to install the software and how to install them
 
-## Running unit tests
+* [NPM](https://www.npmjs.com/) - npm is a package manager for the JavaScript programming language. It is the default package manager for the JavaScript runtime environment Node.js.
+* [Node.js](https://www.nodejs.org/) - Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser.
+* [Angular CLI](https://www.npmjs.com/package/@angular/cli) - Angular is a TypeScript-based open-source front-end web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.
+* [Heroku](https://www.heroku.com/) - Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Installing
 
-## Running end-to-end tests
+A step by step series of examples that tell you how to get a development env running
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+1. Install dependencies:
 
-## Further help
+```
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+2. Build the project:
+
+```
+ng build
+```
+3. Run the server:
+
+```
+ng serve -o
+```
+
+## Deployment
+
+## Technologies
+
+* [Angular](https://www.angular.io) - Angular is a TypeScript-based open-source front-end web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.
+* [Bootstrap](https://www.getbootstrap.com/) - Bootstrap is a free and open-source front-end framework for developing websites and web applications.
+
+## Contributing
+
+* [grantfogle](https://www.github.com/grantfogle) - Grant Fogle
+* [jimbucktoo](https://www.github.com/jimbucktoo) - Jimmy Liang
+* [keschaefer](https://www.github.com/keschaefer) - Kate Schaefer
+* [jtawilliams](https://www.github.com/jtawilliams) - Justin Williams
+
