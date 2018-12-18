@@ -5,12 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { QuestionsComponent } from './questions/questions.component';
+import { LoginComponent } from './login/login.component';
+
+const appRoutes: Routes = [
+  { path: 'questions', component: QuestionsComponent },
+  { path: 'login',      component: LoginComponent },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
