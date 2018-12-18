@@ -1,5 +1,16 @@
 .custom-container {
     margin-left: 5%;
     margin-right: 5%;
-    height: 550px;
+    margin-top: 1%;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1%;
+}
+
+.bottom-bar {
+    display: flex;
+    justify-content: space-between;
 }
