@@ -10,6 +10,7 @@ import { QuestionSpecificComponent } from './question-specific/question-specific
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule} from '@angular/common/http';
         NavbarComponent,
         QuestionsComponent,
         LoginComponent,
-        QuestionSpecificComponent
+        QuestionSpecificComponent,
+        SignUpComponent
     ],
     imports: [
         BrowserModule,
