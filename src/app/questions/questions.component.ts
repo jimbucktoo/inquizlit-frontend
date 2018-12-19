@@ -5,25 +5,25 @@ import {GetQuestionsService} from '../get-questions.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-questions',
-  templateUrl: './questions.component.html',
-  styleUrls: ['./questions.component.css']
+    selector: 'app-questions',
+    templateUrl: './questions.component.html',
+    styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
 
-  faChevronUp = faChevronUp;
-  faChevronDown = faChevronDown;
-  questions:any;
+    faChevronUp = faChevronUp;
+    faChevronDown = faChevronDown;
+    questions:any;
 
-  constructor(private srv: GetQuestionsService) { }
+    constructor(private srv: GetQuestionsService) { }
 
-  ngOnInit() {
-    this.getStuff();
+    ngOnInit() {
+        this.getStuff();
     }
-    
-    getStuff(){
-      this.srv.getData().subscribe(payload=>{
-        this.questions = payload;
-      })
+
+    getStuff() {
+        this.srv.getData().subscribe(payload=>{
+            this.questions = payload;
+        })
     }
 }

@@ -3,6 +3,7 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import {GetQuestionsService} from '../get-questions.service';
 import {GetAnswersService} from '../get-answers.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -19,11 +20,17 @@ export class QuestionSpecificComponent implements OnInit {
     faChevronRight = faChevronRight;
 
     questionBool = true;
+    questions:any;
     answers:any;
+    question_id:any;
 
-    constructor(private srv: GetAnswersService) { }
+    constructor(private qsrv: GetQuestionsService, private asrv: GetAnswersService, route: ActivatedRoute) { 
+        this.question_id = route.snapshot.params['id']
+        console.log(this.question_id);
+    }
 
     ngOnInit() {
+        this.getQuestions();
         this.getAnswers();
     }
 
@@ -35,8 +42,15 @@ export class QuestionSpecificComponent implements OnInit {
         }
     }
 
+    getQuestions(){
+        this.qsrv.getData().subscribe(payload=>{
+            console.log(payload);
+            this.questions = payload;
+        }) 
+    }
+
     getAnswers(){
-        this.srv.getData().subscribe(payload=>{
+        this.asrv.getData().subscribe(payload=>{
             console.log(payload);
             this.answers = payload;
         }) 

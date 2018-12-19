@@ -9,7 +9,7 @@ import { AddQuestionComponent } from './add-question/add-question.component';
 const routes: Routes = [
     { path: "", component: QuestionsComponent },
     { path: "login", component: LoginComponent },
-    { path: "specific", component: QuestionSpecificComponent },
+    { path: "specific/:id", component: QuestionSpecificComponent },
     { path: "signup", component: SignUpComponent },
     { path: "add", component: AddQuestionComponent}
 ];
