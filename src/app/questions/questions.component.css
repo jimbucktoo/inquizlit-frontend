@@ -12,4 +12,27 @@
 .bottom-bar {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+}
+
+.ind-question {
+    display: flex;
+}
+
+.question-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em;
+}
+
+.question-header {
+    display: flex;
+    justify-content: center;
+
+}
+
+.votes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

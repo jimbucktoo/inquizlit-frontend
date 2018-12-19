@@ -1,4 +1,4 @@
-<div class="custom-container list-group">
+<div *ngIf="questions" class="custom-container list-group">
     <div class="top-bar">
         <div class="filterDropdown btn-group">
             <button type="button" class="btn btn-primary">Filter</button>
@@ -16,12 +16,24 @@
         </div>
         <button type="button" class="addButton float-right btn btn-danger">Add Question</button>
     </div>
-    <a routerLink= "specific" class="list-group-item list-group-item-action flex-column align-items-start active">
+    <div routerLink= "specific" class="list-group-item list-group-item-action active ind-question" *ngFor="let question of questions">
         <div class= "votes">
             <fa-icon [icon]="faChevronUp"></fa-icon>
             <p>#votes</p>
             <fa-icon [icon]="faChevronDown"></fa-icon>
         </div>
+        <div class= "question-content">
+            <div class= "question-header">
+                <h5 class="mb-1">{{question.question}}</h5>
+                <small>Username</small>
+            </div>
+            <div class="bottom-bar">
+                <small># of Answers</small>
+                <small>Tags</small>
+            </div>
+        </div>    
+    </div>
+    <!-- <a routerLink= "specific" class="list-group-item list-group-item-action flex-column align-items-start" >
         <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">Question</h5>
             <small>Username</small>
@@ -38,17 +50,7 @@
         </div>
         <div class="bottom-bar">
             <small># of Answers</small>
-            <small>Tags</small>
-        </div>
-    </a>
-    <a routerLink= "specific" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Question</h5>
-            <small>Username</small>
-        </div>
-        <div class="bottom-bar">
-            <small># of Answers</small>
-            <small>Tags</small>
-        </div>
-    </a>
+            <small>Tags</small> -->
+        <!-- </div>
+    </a> -->
 </div>
