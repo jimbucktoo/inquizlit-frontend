@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import {GetQuestionsService} from '../get-questions.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-questions',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionsComponent implements OnInit {
 
-  constructor() { }
+  faChevronUp = faChevronUp;
+  faChevronDown = faChevronDown;
+  questions:any;
+
+  constructor(private srv: GetQuestionsService) { }
 
   ngOnInit() {
-  }
-
+    this.getStuff();
+    }
+    
+    getStuff(){
+      this.srv.getData().subscribe(payload=>{
+        this.questions = payload;
+      })
+    }
 }

@@ -4,10 +4,6 @@
    margin-top: 5%;
 }
 
-.answer {
-   margin-top: 2em;
-}
-
 .buttons {
    margin-top: 2em;
    display: flex;
@@ -29,11 +25,26 @@
 }
 
 .answer-container {
+   display: flex;
    margin-top: 2em;
    border: 1px solid #cccccc;
    border-radius: 3%;
 }
 
+.answer {
+   margin-left: 1em;
+}
+
+.votes {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
 .hidden {
    display: none;
 }
+/* 
+.username {
+   
+} */
