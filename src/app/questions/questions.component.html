@@ -2,22 +2,23 @@
     <div class="top-bar">
         <div class="filterDropdown btn-group">
             <button type="button" class="btn btn-primary">Filter</button>
-            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
                 <span class="sr-only">Toggle Dropdown</span>
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item">Most Recent</a>
-                <a class="dropdown-item">Most Popular</a>
-                <a class="dropdown-item">Culture Fit</a>
-                <a class="dropdown-item">Algorithms</a>
-                <a class="dropdown-item">Computer Science</a>
-                <a class="dropdown-item">Riddles</a>
+                <option class="dropdown-item">Most Recent</option>
+                <option class="dropdown-item" (click)="filterQuestions($event);" value="Most Popular">Most Popular</option>
+                <option class="dropdown-item" (click)="filterQuestions($event);">Cultural</option>
+                <option class="dropdown-item" (click)="filterQuestions($event);">Algorithms</option>
+                <option class="dropdown-item" (click)="filterQuestions($event);">Computer Science</option>
+                <option class="dropdown-item" (click)="filterQuestions($event);">Riddles</option>
             </div>
         </div>
         <button routerLink="add" type="button" class="addButton float-right btn btn-danger">Add Question</button>
     </div>
-    <div routerLink="specific/{{question.id}}" class="list-group-item list-group-item-action ind-question" *ngFor="let question of questions">
-        <div class= "votes">
+    <div routerLink="specific/{{question.id}}" class="list-group-item list-group-item-action ind-question" *ngFor="let question of filteredQuestions">
+        <div class="votes">
             <fa-icon [icon]="faChevronUp"></fa-icon>
             <div>{{question.upvotes - question.downvotes}}</div>
             <fa-icon [icon]="faChevronDown"></fa-icon>
@@ -31,6 +32,6 @@
                 <small># of Answers</small>
                 <small>Tag: {{question.tag}}</small>
             </div>
-        </div>    
+        </div>
     </div>
 </div>
