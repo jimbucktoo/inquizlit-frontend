@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
     templateUrl: './question-specific.component.html',
     styleUrls: ['./question-specific.component.css']
 })
+
 export class QuestionSpecificComponent implements OnInit {
 
     faChevronUp = faChevronUp;
@@ -20,7 +21,7 @@ export class QuestionSpecificComponent implements OnInit {
     faChevronRight = faChevronRight;
 
     questionBool = true;
-    questions:any;
+    question:any;
     answers:any;
     question_id:any;
 
@@ -30,7 +31,7 @@ export class QuestionSpecificComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getQuestions();
+        this.getQuestion();
         this.getAnswers();
     }
 
@@ -42,16 +43,17 @@ export class QuestionSpecificComponent implements OnInit {
         }
     }
 
-    getQuestions(){
-        this.qsrv.getData().subscribe(payload=>{
-            console.log(payload);
-            this.questions = payload;
+    getQuestion(){
+        this.qsrv.getData().subscribe((payload:any) => {
+            if(payload){
+                this.question = payload.filter(obj => obj.id == this.question_id)[0].question;
+            }
+            console.log(this.question);
         }) 
     }
 
     getAnswers(){
         this.asrv.getData().subscribe(payload=>{
-            console.log(payload);
             this.answers = payload;
         }) 
     }

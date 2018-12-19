@@ -1,5 +1,5 @@
-<div class="question-container" [class.hide]="!questionBool">
-    <p><b>Question:</b> Placeholder for Question</p>
+<div *ngIf="question" class="question-container" [class.hide]="!questionBool">
+    <p><b>Question: </b>{{question}}</p>
     <div class="form-group">
         <label for="exampleTextarea"></label>
         <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Enter Answer"></textarea>
@@ -12,7 +12,7 @@
 
 <div class="question-container-two" [class.hide]="questionBool">
     <div class="question">
-        <p><b>Question:</b> Placeholder for Question</p>
+        <p><b>Question: </b>{{question}}</p>
         <button class="btn btn-secondary margin-right-0" (click)="hideQuestion()">Return to Question</button>
     </div>
     <div class="answer-container" *ngFor="let answer of answers">
