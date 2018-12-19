@@ -1,9 +1,10 @@
 <div class="custom-container">
     <img src="../assets/inQuizlit.png">
-    <form>
+    <form #QuestionForm="ngForm">
         <div>
-          <textarea class="form-control form-border" id="question" rows="3" placeholder="Question"></textarea>
+          <textarea class="form-control form-border" id="question" rows="3" placeholder="Question" required [(ngModel)]= "model.name" name="question"></textarea>
         </div>
+        <p>this is the question: {{model.name}}</p>
         <div class="filterDropdown btn-group">
           <button type="button" class="btn btn-primary dropdown-button">Question Tag</button>
           <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -17,7 +18,7 @@
             </div>
         </div>
         <div>
-          <textarea class="form-control form-border" id="answer" rows="3" placeholder="Answer"></textarea>
+          <textarea class="form-control form-border" id="answer" rows="3" placeholder="Answer (optional)"></textarea>
         </div>
         <div class="form-group">
           <input type="text" class="form-control form-border" id="companyName" placeholder="Company Name (optional)">
