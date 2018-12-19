@@ -11,6 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { AddQuestionComponent } from './add-question/add-question.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
         QuestionsComponent,
         LoginComponent,
         QuestionSpecificComponent,
-        SignUpComponent
+        SignUpComponent,
+        AddQuestionComponent
     ],
     imports: [
         BrowserModule,
