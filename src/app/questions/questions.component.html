@@ -17,6 +17,11 @@
         <button type="button" class="addButton float-right btn btn-danger">Add Question</button>
     </div>
     <a routerLink= "specific" class="list-group-item list-group-item-action flex-column align-items-start active">
+        <div class= "votes">
+            <fa-icon [icon]="faChevronUp"></fa-icon>
+            <p>#votes</p>
+            <fa-icon [icon]="faChevronDown"></fa-icon>
+        </div>
         <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">Question</h5>
             <small>Username</small>

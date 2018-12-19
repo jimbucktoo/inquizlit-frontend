@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { LoginComponent } from './login/login.component';
 import { QuestionSpecificComponent } from './question-specific/question-specific.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { QuestionSpecificComponent } from './question-specific/question-specific
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FontAwesomeModule
     ],
     providers: [],
     bootstrap: [AppComponent]
