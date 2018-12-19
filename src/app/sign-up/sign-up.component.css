@@ -1,0 +1,32 @@
+.custom-container {
+   margin-left: 40%;
+   margin-right: 40%;
+   margin-top: 5%;
+   margin-bottom: 5%;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
+
+img {
+   width: 100%;
+   border-radius: 10px;
+   /* height: 300px; */
+}
+
+form {
+   margin-top: 20px;
+}
+
+.sign-button {
+   display: flex;
+   justify-content: center;
+}
+
+.sign-up-button {
+    margin-left: 10px;
+}
+
+.form-border {
+   border: 1px solid black;
+}
