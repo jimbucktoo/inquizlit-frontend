@@ -1,6 +1,7 @@
 .question-container {
     margin-right: 20%;
     margin-left: 20%;
+    margin-top: 5%;
 }
 
 .buttons {
@@ -56,4 +57,23 @@
 
 .answer {
     margin-left: 30px;
+}
+
+.arrows {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.left-arrow {
+
+}
+
+.right-arrow {
+    width: 30px;
+    margin-left: 100px;
+}
+
+.hide {
+    display: none;
 }

@@ -1,4 +1,4 @@
-<div class="question-container">
+<div class="question-container" [class.hide]="!questionBool">
     <p><b>Question:</b> Placeholder for Question</p>
     <div class="form-group">
         <label for="exampleTextarea"></label>
@@ -6,25 +6,28 @@
     </div>
     <div class="buttons">
         <button class="btn btn-primary margin-right-0">Submit</button>
-        <button class="btn btn-secondary margin-left-10 margin-right-0">Show Answers</button>
+        <button class="btn btn-secondary margin-left-10 margin-right-0" (click)="hideQuestion()">Show Answers</button>
     </div>
 </div>
 
-<div class="question-container-two">
+<div class="question-container-two" [class.hide]="questionBool">
     <div class="question">
         <p><b>Question:</b> Placeholder for Question</p>
-        <button class="btn btn-secondary margin-right-0">Return to Questions</button>
+        <button class="btn btn-secondary margin-right-0" (click)="hideQuestion()">Return to Question</button>
     </div>
-    <div class="answer-container">
+    <div class="answer-container" *ngFor="let answer of answers">
         <div class="votes">
             <fa-icon [icon]="faChevronUp"></fa-icon>
-            <div>#votes</div>
+            <div>{{answer.upvotes - answer.downvotes}}</div>
             <fa-icon [icon]="faChevronDown"></fa-icon>
         </div>
         <div class="answer">
-            <p><b>Answer:</b> Placeholder for Answer</p>
-            <small class="username">Username</small>
+            <p><b>Answer: </b>{{answer.answer}}</p>
+            <small class="username">User: {{answer.user_id}}</small>
         </div>
     </div>
 </div> 
-
+<div class="arrows">
+    <a href="/specific"><fa-icon [icon]="faChevronLeft" class="left-arrow"></fa-icon></a>
+    <a href="/specific"><fa-icon [icon]="faChevronRight" class="right-arrow"></fa-icon></a>
+</div>
