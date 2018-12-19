@@ -19,7 +19,11 @@ form {
 
 .sign-button {
    display: flex;
-   justify-content: space-around;
+   justify-content: center;
+}
+
+.sign-up-button {
+    margin-left: 10px;
 }
 
 .form-border {
