@@ -1,0 +1,39 @@
+.question-container {
+   margin-right: 20%;
+   margin-left: 20%;
+   margin-top: 5%;
+}
+
+.answer {
+   margin-top: 2em;
+}
+
+.buttons {
+   margin-top: 2em;
+   display: flex;
+}
+
+.btn {
+   margin-right: 2em;
+}
+
+.question-container-two {
+   margin-right: 20%;
+   margin-left: 20%;
+   margin-top: 5%;
+}
+
+.question {
+   display: flex;
+   justify-content: space-between;
+}
+
+.answer-container {
+   margin-top: 2em;
+   border: 1px solid #cccccc;
+   border-radius: 3%;
+}
+
+.hidden {
+   display: none;
+}
