@@ -17,9 +17,9 @@
     </div>
     <div class="answer-container" *ngFor="let answer of filteredAnswers">
         <div class="votes">
-            <fa-icon [icon]="faChevronUp"></fa-icon>
+            <fa-icon [icon]="faChevronUp" (click)="upVoteAnswer(answer.id)"></fa-icon>
             <div>{{answer.upvotes - answer.downvotes}}</div>
-            <fa-icon [icon]="faChevronDown"></fa-icon>
+            <fa-icon [icon]="faChevronDown" (click)="downVoteAnswer(answer.id)"></fa-icon>
         </div>
         <div class="answer">
             <p><b>Answer: </b>{{answer.answer}}</p>

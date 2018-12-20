@@ -72,4 +72,34 @@ export class QuestionSpecificComponent implements OnInit {
     newAnswer(){
         this.asrvpost.postAnswer(this.model)
     }
+
+    upVoteAnswer(id) {
+        fetch(`https://inquizlit-backend.herokuapp.com/answers/${id}/upvote`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        }).then(response => {
+            this.filteredAnswers.map(answer => {
+                if (answer.id === id) {
+                    return answer.upvotes++;
+                }
+            })
+        })
+    }
+
+    downVoteAnswer(id) {
+        fetch(`https://inquizlit-backend.herokuapp.com/answers/${id}/downvote`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        }).then(response => {
+            this.filteredAnswers.map(answer => {
+                if (answer.id === id) {
+                    return answer.downvotes++;
+                }
+            })
+        })
+    }
 }
