@@ -1,27 +1,29 @@
 <div class="custom-container">
     <img src="../assets/inQuizlit.png">
-    <form>
+    <form (ngSubmmit)="onSubmit()" #NewUserForm="ngForm">
         <div class="form-group">
-            <input type="text" class="form-control form-border" id="firstName" placeholder="First Name">
+            <input type="text" class="form-control form-border" id="first_name" placeholder="First Name" name="first_name" [(ngModel)]="model.first_name" >
           </div>
         <div class="form-group">
-            <input type="text" class="form-control form-border" id="LastName" placeholder="Last Name">
+            <input type="text" class="form-control form-border" id="Last_name" placeholder="Last Name" name="last_name" [(ngModel)]="model.last_name" >
         </div>
         <div class="form-group">
-            <input type="text" class="form-control form-border" id="Username" placeholder="Username">
+            <input type="text" class="form-control form-border" id="Username" placeholder="Username" name="username" [(ngModel)]="model.username" >
         </div>
         <div class="form-group">
-          <input type="email" class="form-control form-border" id="Email1" aria-describedby="emailHelp" placeholder="Email">
+          <input type="email" class="form-control form-border" id="Email" aria-describedby="emailHelp" placeholder="Email" name="email" [(ngModel)]="model.email" >
         </div>
         <div class="form-group">
-          <input type="password" class="form-control form-border" id="Password1" placeholder="Password">
+          <input type="password" class="form-control form-border" id="Password1" placeholder="Password" name="password" [(ngModel)]="model.password" >
         </div>
         <div class="form-group">
             <input type="password" class="form-control form-border" id="Password2" placeholder="Re-enter Password">
           </div>
         <div class="sign-button">
-        <button type="button" class="sign-up-button btn btn-primary">Sign Up</button>
+        <button type="submit" [disabled]="NewUserForm.invalid" (click)="newUser()" class="sign-up-button btn btn-primary">Sign Up</button>
       </div>
     </form>
   </div>
+
+  <pre>{{NewUserForm.value | json}}</pre>
   

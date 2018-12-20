@@ -5,7 +5,7 @@ export class NewUser {
       public last_name: string = "",
       public username: string = "",
       public email: string= "",
-      public password: number = 1,,
+      public password: string = "",
    ) { }
 
 }
