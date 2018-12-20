@@ -8,7 +8,7 @@ export class AddAnswerService {
 
   constructor(private http:HttpClient) { }
 
-    postQuestion(newAnswer: any){
+    postAnswer(newAnswer: any){
       fetch("https://inquizlit-backend.herokuapp.com/answers/", {
         method: "POST",
         headers: {
@@ -17,5 +17,6 @@ export class AddAnswerService {
         body: JSON.stringify(newAnswer)
       })
       .then(response => (response.json()))
+      .then(response => console.log(response))
     }
   }
