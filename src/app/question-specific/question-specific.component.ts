@@ -3,8 +3,8 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import {GetQuestionsService} from '../get-questions.service';
-import {GetAnswersService} from '../get-answers.service';
+import { GetQuestionsService } from '../get-questions.service';
+import { GetAnswersService } from '../get-answers.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -21,41 +21,50 @@ export class QuestionSpecificComponent implements OnInit {
     faChevronRight = faChevronRight;
 
     questionBool = true;
-    question:any;
-    answers:any;
-    question_id:any;
+    question: any;
+    answers: any;
+    question_id: any;
+    filteredAnswers: any;
 
-    constructor(private qsrv: GetQuestionsService, private asrv: GetAnswersService, route: ActivatedRoute) { 
-        this.question_id = route.snapshot.params['id']
-        console.log(this.question_id);
+    constructor(private qsrv: GetQuestionsService, private asrv: GetAnswersService, route: ActivatedRoute) {
+        this.question_id = route.snapshot.params['id'];
+        // console.log(this.question_id);
     }
 
     ngOnInit() {
         this.getQuestion();
         this.getAnswers();
+        console.log(this.question_id);
+
     }
 
-    hideQuestion(){
-        if(this.questionBool == false){
-            this.questionBool = true; 
+    hideQuestion() {
+        if (this.questionBool == false) {
+            this.questionBool = true;
         } else {
             this.questionBool = false;
+            this.filteredAnswers = this.answers.filter(answer => answer.question_id == this.question_id);
+            console.log(this.answers);
+            console.log(this.filteredAnswers);
         }
+
     }
 
-    getQuestion(){
-        this.qsrv.getData().subscribe((payload:any) => {
-            if(payload){
+    getQuestion() {
+        this.qsrv.getData().subscribe((payload: any) => {
+            if (payload) {
                 this.question = payload.filter(obj => obj.id == this.question_id)[0].question;
             }
             console.log(this.question);
-        }) 
+        })
     }
 
-    getAnswers(){
-        this.asrv.getData().subscribe(payload=>{
+    getAnswers() {
+        this.asrv.getData().subscribe(payload => {
             this.answers = payload;
-        }) 
+            this.filteredAnswers = this.answers;
+        })
     }
+
 
 }
