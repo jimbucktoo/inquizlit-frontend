@@ -10,6 +10,18 @@
     </div>
 </div>
 
+<div *ngIf="random" class="question-container" [class.hide]="!questionBool">
+    <p><b>Question: </b>{{random}}</p>
+    <div class="form-group">
+        <label for="exampleTextarea"></label>
+        <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Enter Answer"></textarea>
+    </div>
+    <div class="buttons">
+        <button class="btn btn-primary margin-right-0">Submit</button>
+        <button class="btn btn-secondary margin-left-10 margin-right-0" (click)="hideQuestion()">Show Answers</button>
+    </div>
+</div>
+
 <div class="question-container-two" [class.hide]="questionBool">
     <div class="question">
         <p><b>Question: </b>{{question}}</p>

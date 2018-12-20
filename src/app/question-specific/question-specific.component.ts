@@ -23,26 +23,28 @@ export class QuestionSpecificComponent implements OnInit {
     faChevronRight = faChevronRight;
 
     questionBool = true;
+
     question: any;
     answers: any;
     question_id: any;
     filteredAnswers: any;
     model = new NewAnswer("", this.question_id, 1, 0, 0)
 
-    constructor(private qsrv: GetQuestionsService, private asrv: GetAnswersService, private asrvpost: AddAnswerService, route: ActivatedRoute) {
-        this.question_id = route.snapshot.params['id'];
-        // console.log(this.question_id);
+    constructor(private qsrv: GetQuestionsService, private asrv: GetAnswersService, route: ActivatedRoute) {
+        this.question_id = route.snapshot.params['id']
+		this.random_id = route.snapshot.params['id']
+        console.log(this.question_id);
+
     }
 
     ngOnInit() {
         this.getQuestion();
         this.getAnswers();
-        console.log(this.question_id);
-
+        this.randomQuestion();
     }
 
-    hideQuestion() {
-        if (this.questionBool == false) {
+    hideQuestion(){
+        if(this.questionBool == false){
             this.questionBool = true;
         } else {
             this.questionBool = false;
@@ -53,12 +55,21 @@ export class QuestionSpecificComponent implements OnInit {
 
     }
 
-    getQuestion() {
-        this.qsrv.getData().subscribe((payload: any) => {
-            if (payload) {
-                this.question = payload.filter(obj => obj.id == this.question_id)[0].question;
+	randomQuestion(){
+		this.qsrv.getData().subscribe((payload:random) => {
+			if(payload){
+				this.random = payload.filter(obj => null == this.random_id)[0].question;
+				console.log(this.random)
+			}
+		})
+	}
+
+    getQuestion(){
+        this.qsrv.getData().subscribe((payload:any) => {
+            if(payload){
+				this.question = payload.filter(obj => obj.id == this.question_id)[0].question;
+
             }
-            console.log(this.question);
         })
     }
 
@@ -72,6 +83,7 @@ export class QuestionSpecificComponent implements OnInit {
     newAnswer(){
         this.asrvpost.postAnswer(this.model);
         this.hideQuestion();
+        })
     }
 
     upVoteAnswer(id) {
