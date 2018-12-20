@@ -11,7 +11,8 @@ const routes: Routes = [
     { path: "login", component: LoginComponent },
     { path: "specific/:id", component: QuestionSpecificComponent },
     { path: "signup", component: SignUpComponent },
-    { path: "add", component: AddQuestionComponent}
+    { path: "add", component: AddQuestionComponent},
+	{ path: "flash", component: QuestionSpecificComponent }
 ];
 
 @NgModule({
