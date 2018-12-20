@@ -15,7 +15,7 @@
         <p><b>Question: </b>{{question}}</p>
         <button class="btn btn-secondary margin-right-0" (click)="hideQuestion()">Return to Question</button>
     </div>
-    <div class="answer-container" *ngFor="let answer of answers">
+    <div class="answer-container" *ngFor="let answer of filteredAnswers">
         <div class="votes">
             <fa-icon [icon]="faChevronUp"></fa-icon>
             <div>{{answer.upvotes - answer.downvotes}}</div>
@@ -23,10 +23,10 @@
         </div>
         <div class="answer">
             <p><b>Answer: </b>{{answer.answer}}</p>
-            <small class="username">User: {{answer.user_id}}</small>
+            <small class="username">User: {{answer.username}}</small>
         </div>
     </div>
-</div> 
+</div>
 <div class="arrows">
     <a href="/specific"><fa-icon [icon]="faChevronLeft" class="left-arrow"></fa-icon></a>
     <a href="/specific"><fa-icon [icon]="faChevronRight" class="right-arrow"></fa-icon></a>

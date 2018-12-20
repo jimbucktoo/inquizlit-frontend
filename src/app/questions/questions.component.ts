@@ -48,7 +48,4 @@ export class QuestionsComponent implements OnInit {
         // }
     }
 
-    generateQuestionsByFilter() {
-
-    }
 }
