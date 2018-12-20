@@ -48,4 +48,33 @@ export class QuestionsComponent implements OnInit {
         // }
     }
 
+    upVoteQuestion(id) {
+        fetch(`https://inquizlit-backend.herokuapp.com/questions/${id}/upvote`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        }).then(response => {
+            this.filteredQuestions.map(question => {
+                if (question.id === id) {
+                    return question.upvotes++;
+                }
+            })
+        })
+    }
+    downVoteQuestion(id) {
+        fetch(`https://inquizlit-backend.herokuapp.com/questions/${id}/downvote`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        }).then(response => {
+            this.filteredQuestions.map(question => {
+                if (question.id === id) {
+                    return question.downvotes++;
+                }
+            })
+        })
+    }
+
 }
