@@ -13,10 +13,10 @@
                 <option *ngFor="let tag of tags" [value]="tag" class="dropdown-item">{{tag}}</option>
             </div>
         </div>
-        <div>
-          <textarea class="form-control form-border" id="answer" rows="3" placeholder="Answer (optional)"></textarea>
-          <!-- [(ngModel)]="model.answer" name="answer" -->
-        </div>
+        <form (ngSubmit)="onSubmit()" #AnswerForm="ngForm" >
+          <textarea class="form-control form-border" id="answer" rows="3" placeholder="Answer (optional)" [(ngModel)]="modelAnswer.answer" name="answer"></textarea>
+          
+        </form>
         <div class="form-group">
           <input type="text" class="form-control form-border" id="company" placeholder="Company Name (optional)" [(ngModel)]="model.company" name="company">
         </div>

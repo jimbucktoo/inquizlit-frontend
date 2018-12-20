@@ -17,5 +17,6 @@ export class AddQuestionService {
         body: JSON.stringify(newQuestion)
       })
       .then(response => (response.json()))
+      .then(response => (console.log(response)))
     }
   }

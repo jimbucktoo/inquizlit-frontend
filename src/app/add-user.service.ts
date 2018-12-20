@@ -18,4 +18,15 @@ export class AddNewUserService {
       })
       .then(response => (response.json()))
     }
+
+    sendUser(User: any){
+      fetch("https://inquizlit-backend.herokuapp.com/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        body: JSON.stringify(User)
+      })
+      .then(response => (response.json()))
+    }
   }

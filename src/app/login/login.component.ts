@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { SigninUser } from '../signin-user';
+import { AddNewUserService } from '../add-user.service';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +10,15 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  model = new SigninUser("", "");
+
+  constructor(private router: Router, private usrv: AddNewUserService) { }
 
   ngOnInit() {
   }
 
   sendToSignUp(){
-    this.router.navigateByUrl('/signup')
+    this.router.navigateByUrl('/signup');
+    this.usrv.sendUser(this.model);
   }
 }
