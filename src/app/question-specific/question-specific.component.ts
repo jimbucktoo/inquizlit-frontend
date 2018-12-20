@@ -3,9 +3,11 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import {GetQuestionsService} from '../get-questions.service';
-import {GetAnswersService} from '../get-answers.service';
+import { GetQuestionsService } from '../get-questions.service';
+import { GetAnswersService } from '../get-answers.service';
 import { ActivatedRoute } from '@angular/router';
+import { AddAnswerService } from '../add-answer.service';
+import { NewAnswer } from '../new-answer';
 
 @Component({
     selector: 'app-question-specific',
@@ -21,22 +23,24 @@ export class QuestionSpecificComponent implements OnInit {
     faChevronRight = faChevronRight;
 
     questionBool = true;
-    question:any;
-    answers:any;
-    question_id:any;
-	random:any;
 
+    question: any;
+    answers: any;
+    question_id: any;
+    filteredAnswers: any;
+    model = new NewAnswer("", this.question_id, 1, 0, 0)
 
     constructor(private qsrv: GetQuestionsService, private asrv: GetAnswersService, route: ActivatedRoute) {
         this.question_id = route.snapshot.params['id']
 		this.random_id = route.snapshot.params['id']
         console.log(this.question_id);
+
     }
 
     ngOnInit() {
         this.getQuestion();
         this.getAnswers();
-		this.randomQuestion();
+        this.randomQuestion();
     }
 
     hideQuestion(){
@@ -44,7 +48,11 @@ export class QuestionSpecificComponent implements OnInit {
             this.questionBool = true;
         } else {
             this.questionBool = false;
+            this.filteredAnswers = this.answers.filter(answer => answer.question_id == this.question_id);
+            console.log(this.answers);
+            console.log(this.filteredAnswers);
         }
+
     }
 
 	randomQuestion(){
@@ -65,10 +73,46 @@ export class QuestionSpecificComponent implements OnInit {
         })
     }
 
-    getAnswers(){
-        this.asrv.getData().subscribe(payload=>{
+    getAnswers() {
+        this.asrv.getData().subscribe(payload => {
             this.answers = payload;
+            this.filteredAnswers = this.answers;
         })
     }
 
+    newAnswer(){
+        this.asrvpost.postAnswer(this.model);
+        this.hideQuestion();
+        })
+    }
+
+    upVoteAnswer(id) {
+        fetch(`https://inquizlit-backend.herokuapp.com/answers/${id}/upvote`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        }).then(response => {
+            this.filteredAnswers.map(answer => {
+                if (answer.id === id) {
+                    return answer.upvotes++;
+                }
+            })
+        })
+    }
+
+    downVoteAnswer(id) {
+        fetch(`https://inquizlit-backend.herokuapp.com/answers/${id}/downvote`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        }).then(response => {
+            this.filteredAnswers.map(answer => {
+                if (answer.id === id) {
+                    return answer.downvotes++;
+                }
+            })
+        })
+    }
 }

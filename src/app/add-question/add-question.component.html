@@ -1,31 +1,29 @@
 <div class="custom-container">
     <img src="../assets/inQuizlit.png">
-    <form>
+    <form (ngSubmit)="onSubmit()" #QuestionForm="ngForm">
         <div>
-          <textarea class="form-control form-border" id="question" rows="3" placeholder="Question"></textarea>
+          <textarea class="form-control form-border" id="question" rows="3" placeholder="Question" name="question" [(ngModel)]="model.question" required ></textarea>
         </div>
-        <div class="filterDropdown btn-group">
+        <div class="filterDropdown btn-group form-group">
           <button type="button" class="btn btn-primary dropdown-button">Question Tag</button>
           <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="sr-only">Question Tag</span>
           </button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item">Culture Fit</a>
-                <a class="dropdown-item">Algorithms</a>
-                <a class="dropdown-item">Computer Science</a>
-                <a class="dropdown-item">Riddles</a>
+            <div class="dropdown-menu form-group" id= "tag" name="tag" [(ngModel)]="model.tag" required >
+                <option *ngFor="let tag of tags" [value]="tag" class="dropdown-item">{{tag}}</option>
             </div>
         </div>
-        <div>
-          <textarea class="form-control form-border" id="answer" rows="3" placeholder="Answer"></textarea>
+        <form (ngSubmit)="onSubmit()" #AnswerForm="ngForm" >
+          <textarea class="form-control form-border" id="answer" rows="3" placeholder="Answer (optional)" [(ngModel)]="modelAnswer.answer" name="answer"></textarea>
+          
+        </form>
+        <div class="form-group">
+          <input type="text" class="form-control form-border" id="company" placeholder="Company Name (optional)" [(ngModel)]="model.company" name="company">
         </div>
         <div class="form-group">
-          <input type="text" class="form-control form-border" id="companyName" placeholder="Company Name (optional)">
+          <input type="text" class="form-control form-border" id="interviewer" placeholder="Interviewer Name (optional)" [(ngModel)]="model.interviewer" name="interviewer">
         </div>
-        <div class="form-group">
-          <input type="text" class="form-control form-border" id="interviewerName" placeholder="Interviewer Name (optional)">
-        </div>
-        <button type="button" class="add-question-button btn btn-primary">Submit</button>
+        <button routerLink= "" type="submit" class="add-question-button btn btn-primary" [disabled]="QuestionForm.invalid" (click)="newQuestion()">Submit</button>
     </form>
   </div>
   
