@@ -24,38 +24,51 @@ export class QuestionSpecificComponent implements OnInit {
     question:any;
     answers:any;
     question_id:any;
+	random:any;
 
-    constructor(private qsrv: GetQuestionsService, private asrv: GetAnswersService, route: ActivatedRoute) { 
+
+    constructor(private qsrv: GetQuestionsService, private asrv: GetAnswersService, route: ActivatedRoute) {
         this.question_id = route.snapshot.params['id']
+		this.random_id = route.snapshot.params['id']
         console.log(this.question_id);
     }
 
     ngOnInit() {
         this.getQuestion();
         this.getAnswers();
+		this.randomQuestion();
     }
 
     hideQuestion(){
         if(this.questionBool == false){
-            this.questionBool = true; 
+            this.questionBool = true;
         } else {
             this.questionBool = false;
         }
     }
 
+	randomQuestion(){
+		this.qsrv.getData().subscribe((payload:random) => {
+			if(payload){
+				this.random = payload.filter(obj => null == this.random_id)[0].question;
+				console.log(this.random)
+			}
+		})
+	}
+
     getQuestion(){
         this.qsrv.getData().subscribe((payload:any) => {
             if(payload){
-                this.question = payload.filter(obj => obj.id == this.question_id)[0].question;
+				this.question = payload.filter(obj => obj.id == this.question_id)[0].question;
+
             }
-            console.log(this.question);
-        }) 
+        })
     }
 
     getAnswers(){
         this.asrv.getData().subscribe(payload=>{
             this.answers = payload;
-        }) 
+        })
     }
 
 }
