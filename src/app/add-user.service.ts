@@ -8,13 +8,13 @@ export class AddQuestionService {
 
   constructor(private http:HttpClient) { }
 
-    postQuestion(newQuestion: any){
-      fetch("https://inquizlit-backend.herokuapp.com/questions", {
+    postUser(newUser: any){
+      fetch("https://inquizlit-backend.herokuapp.com/user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         },
-        body: JSON.stringify(newQuestion)
+        body: JSON.stringify(newUser)
       })
       .then(response => (response.json()))
       .then(response => console.log(response))
