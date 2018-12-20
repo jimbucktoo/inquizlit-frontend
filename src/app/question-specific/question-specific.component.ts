@@ -70,7 +70,8 @@ export class QuestionSpecificComponent implements OnInit {
     }
 
     newAnswer(){
-        this.asrvpost.postAnswer(this.model); this.hideQuestion();
+        this.asrvpost.postAnswer(this.model);
+        this.hideQuestion();
     }
 
     upVoteAnswer(id) {
