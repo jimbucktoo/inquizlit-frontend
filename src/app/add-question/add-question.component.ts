@@ -26,6 +26,5 @@ export class AddQuestionComponent implements OnInit {
 
     newQuestion() {
         this.service.postQuestion(this.model);
-      
     }
 }
