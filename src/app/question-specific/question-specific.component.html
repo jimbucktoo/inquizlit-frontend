@@ -1,11 +1,11 @@
 <div *ngIf="question" class="question-container" [class.hide]="!questionBool">
     <p><b>Question: </b>{{question}}</p>
-    <div class="form-group">
+    <form class="form-group" (ngSumbit)= "onSubmit()" #AnswerForm="ngForm">
         <label for="exampleTextarea"></label>
-        <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Enter Answer"></textarea>
-    </div>
+        <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Enter Answer" name="answer" [(ngModel)]="model.answer"></textarea>
+    </form>
     <div class="buttons">
-        <button class="btn btn-primary margin-right-0">Submit</button>
+        <button type= "submit" class="btn btn-primary margin-right-0" [disabled]="AnswerForm.invalid" (click)="newAnswer()">Submit</button>
         <button class="btn btn-secondary margin-left-10 margin-right-0" (click)="hideQuestion()">Show Answers</button>
     </div>
 </div>

@@ -6,6 +6,8 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { GetQuestionsService } from '../get-questions.service';
 import { GetAnswersService } from '../get-answers.service';
 import { ActivatedRoute } from '@angular/router';
+import { AddAnswerService } from '../add-answer.service';
+import { NewAnswer } from '../new-answer';
 
 @Component({
     selector: 'app-question-specific',
@@ -25,8 +27,9 @@ export class QuestionSpecificComponent implements OnInit {
     answers: any;
     question_id: any;
     filteredAnswers: any;
+    model = new NewAnswer("", this.question_id, 1, 0, 0)
 
-    constructor(private qsrv: GetQuestionsService, private asrv: GetAnswersService, route: ActivatedRoute) {
+    constructor(private qsrv: GetQuestionsService, private asrv: GetAnswersService, private asrvpost: AddAnswerService, route: ActivatedRoute) {
         this.question_id = route.snapshot.params['id'];
         // console.log(this.question_id);
     }
@@ -64,6 +67,10 @@ export class QuestionSpecificComponent implements OnInit {
             this.answers = payload;
             this.filteredAnswers = this.answers;
         })
+    }
+
+    newAnswer(){
+        this.asrvpost.postAnswer(this.model)
     }
 
     upVoteAnswer(id) {
