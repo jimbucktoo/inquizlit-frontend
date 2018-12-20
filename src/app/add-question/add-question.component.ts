@@ -7,14 +7,19 @@ import { NewQuestion } from '../new-question';
     styleUrls: ['./add-question.component.css']
 })
 export class AddQuestionComponent implements OnInit {
+    form: any;
 
     tags = ['Culture Fit', 'Algorithms', 'Computer Science', 'Riddles'];
 
-    model = new NewQuestion(101,"This is a question", this.tags[0], "This is an answer", "Company X", "Iterviewer Y")
+    model = new NewQuestion()
 
-    submitted = false;
+    // submitted = false;
 
-    onSubmit() { this.submitted = true; }
+    onSubmit() {console.log("this is submitted")}
+ 
+    newQuestion() {
+      console.log(this.model)
+    }
 
     constructor() { }
 
