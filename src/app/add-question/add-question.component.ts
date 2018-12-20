@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewQuestion } from '../new-question';
+import { AddQuestionService } from '../add-question.service';
 
 @Component({
     selector: 'app-add-question',
@@ -15,15 +16,16 @@ export class AddQuestionComponent implements OnInit {
 
     // submitted = false;
 
-    onSubmit() {console.log("this is submitted")}
- 
-    newQuestion() {
-      console.log(this.model)
+    onSubmit() {
     }
 
-    constructor() { }
+    constructor(private service: AddQuestionService) { }
 
     ngOnInit() {
     }
 
+    newQuestion() {
+        this.service.postQuestion(this.model);
+      
+    }
 }

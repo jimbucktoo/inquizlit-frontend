@@ -6,22 +6,16 @@
         </div>
         <div class="filterDropdown btn-group form-group">
           <button type="button" class="btn btn-primary dropdown-button">Question Tag</button>
-          <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+          <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="sr-only">Question Tag</span>
           </button>
-            <div class="dropdown-menu form-group" name="tag" [(ngModel)]="model.tag" required>
-                <a *ngFor="let tag of tags" [value]="tag" class="dropdown-item">{{tag}}</a>
+            <div class="dropdown-menu form-group" id= "tag" name="tag" [(ngModel)]="model.tag" required >
+                <option *ngFor="let tag of tags" [value]="tag" class="dropdown-item">{{tag}}</option>
             </div>
         </div>
-        <!-- <div class="form-group">
-          <label for="power">Hero Power</label>
-          <select class="form-control" id="power" required>
-            <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
-          </select>
-        </div> -->
         <div>
-          <textarea class="form-control form-border" id="answer" rows="3" placeholder="Answer (optional)" 
-          [(ngModel)]="model.answer" name="answer"></textarea>
+          <textarea class="form-control form-border" id="answer" rows="3" placeholder="Answer (optional)"></textarea>
+          <!-- [(ngModel)]="model.answer" name="answer" -->
         </div>
         <div class="form-group">
           <input type="text" class="form-control form-border" id="company" placeholder="Company Name (optional)" [(ngModel)]="model.company" name="company">
@@ -29,7 +23,7 @@
         <div class="form-group">
           <input type="text" class="form-control form-border" id="interviewer" placeholder="Interviewer Name (optional)" [(ngModel)]="model.interviewer" name="interviewer">
         </div>
-        <button type="submit" class="add-question-button btn btn-primary" [disabled]="QuestionForm.invalid" (click)="newQuestion()">Submit</button>
+        <button routerLink= "" type="submit" class="add-question-button btn btn-primary" [disabled]="QuestionForm.invalid" (click)="newQuestion()">Submit</button>
     </form>
   </div>
 
