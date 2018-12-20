@@ -19,6 +19,10 @@ export class LoginComponent implements OnInit {
 
   sendToSignUp(){
     this.router.navigateByUrl('/signup');
-    this.usrv.sendUser(this.model);
+  }
+
+  sendToHome(){
+    this.router.navigateByUrl('');
+    // this.usrv.sendUser(this.model);
   }
 }
