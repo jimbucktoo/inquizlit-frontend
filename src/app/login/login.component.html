@@ -1,6 +1,6 @@
 <div class="custom-container">
   <img src="../assets/inQuizlit.png">
-  <div (ngSubmit)="onSubmit()" #LoginForm="ngForm" class= "form">
+  <form (ngSubmit)="onSubmit()" #LoginForm="ngForm" class= "form">
       <div class="form-group">
         <input type="email" class="form-control form-border" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="email" [(ngModel)]="model.email" required>
       </div>
@@ -8,8 +8,8 @@
         <input type="password" class="form-control form-border" id="exampleInputPassword1" placeholder="Password" name="password" [(ngModel)]="model.password" required>
       </div>
       <div class="sign-button">
-      <button type="button" class="btn btn-primary">Sign In</button>
-      <button type="button" class="sign-up-button btn btn-secondary" (click)="sendToSignUp();" [disabled]="LoginForm.invalid">Sign Up</button>
-    </div>
-  </div>
+      <button type="button" class="btn btn-primary" [disabled]="LoginForm.invalid" (click)="sendToHome();">Sign In</button>
+      <button type="button" class="sign-up-button btn btn-secondary" (click)="sendToSignUp();">Sign Up</button>
+      </div>
+    </form>
 </div>
