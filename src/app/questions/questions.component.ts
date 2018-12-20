@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { GetQuestionsService } from '../get-questions.service';
+import { GetAnswersService } from '../get-answers.service'
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -14,19 +15,33 @@ export class QuestionsComponent implements OnInit {
     faChevronUp = faChevronUp;
     faChevronDown = faChevronDown;
     questions: any;
+    answers: any;
     filteredQuestions: any;
 
-    constructor(private srv: GetQuestionsService) { }
+    constructor(private srv: GetQuestionsService, private asrv: GetAnswersService) { }
 
     ngOnInit() {
-        this.getStuff();
+        this.getQuestions();
+        this.getAnswers();
     }
 
-    getStuff() {
+    getQuestions() {
         this.srv.getData().subscribe(payload => {
             this.questions = payload;
             this.filteredQuestions = this.questions;
         })
+    }
+
+    getAnswers() {
+        this.asrv.getData().subscribe(payload => {
+            this.answers = payload;
+        })
+    }
+
+    getNumberOfAnswers(id) {
+        let count = this.answers.filter(answer => answer.question_id === id).length;
+        // console.log(count)
+        return count;
     }
 
     filterQuestions(event) {
