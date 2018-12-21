@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class AddNewUserService {
 
@@ -17,7 +17,7 @@ export class AddNewUserService {
         body: JSON.stringify(newUser)
       })
       .then(response => (response.json()))
-    }
+    };
 
     sendUser(User: any){
       fetch("https://inquizlit-backend.herokuapp.com/users", {
@@ -28,5 +28,6 @@ export class AddNewUserService {
         body: JSON.stringify(User)
       })
       .then(response => (response.json()))
-    }
-  }
+    };
+
+  };

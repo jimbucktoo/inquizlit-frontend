@@ -7,23 +7,22 @@ import { AddNewUserService } from '../add-user.service';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
+
 export class SignUpComponent implements OnInit {
 
   form: any;
-
-  model = new NewUser()
-
-  // submitted = false;
+  model = new NewUser();
 
   onSubmit() {
-  }
+  };
 
   constructor(private service: AddNewUserService) { }
 
   ngOnInit() {
-  }
+  };
 
   newUser() {
       this.service.postUser(this.model);
-  }
+  };
+  
 }

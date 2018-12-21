@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class AddQuestionService {
 
@@ -18,5 +18,6 @@ export class AddQuestionService {
       })
       .then(response => (response.json()))
       .then(response => (console.log(response)))
-    }
-  }
+    };
+
+  };

@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-import { SigninUser } from '../signin-user';
-import { AddNewUserService } from '../add-user.service';
+import { Component, OnInit } from "@angular/core";
+import {Router} from "@angular/router";
+import { SigninUser } from "../signin-user";
+import { AddNewUserService } from "../add-user.service";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.css"]
 })
+
 export class LoginComponent implements OnInit {
 
   model = new SigninUser("", "");
@@ -15,17 +16,18 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private usrv: AddNewUserService) { }
 
   onSubmit() {
-  }
+  };
   
   ngOnInit() {
-  }
+  };
 
-  sendToSignUp(){
-    this.router.navigateByUrl('/signup');
-  }
+  sendToSignUp() {
+    this.router.navigateByUrl("/signup");
+  };
 
-  sendToHome(){
-    this.router.navigateByUrl('');
+  sendToHome() {
+    this.router.navigateByUrl("");
     // this.usrv.sendUser(this.model);
-  }
-}
+  };
+
+};

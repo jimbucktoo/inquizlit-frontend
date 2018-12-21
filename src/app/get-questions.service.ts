@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class GetQuestionsService {
 
@@ -10,6 +10,6 @@ export class GetQuestionsService {
 
   getData(){
     return this.http.get("https://inquizlit-backend.herokuapp.com/questions");
-  }
+  };
 
-}
+};
