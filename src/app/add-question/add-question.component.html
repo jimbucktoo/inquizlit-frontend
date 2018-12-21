@@ -7,15 +7,14 @@
         <div class="filterDropdown btn-group form-group">
           <button type="button" class="btn btn-primary dropdown-button">Question Tag</button>
           <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="sr-only">Question Tag</span>
+            <span class="sr-only">Question Tag</span>
           </button>
-            <div class="dropdown-menu form-group" id= "tag" name="tag" [(ngModel)]="model.tag" required >
-                <option *ngFor="let tag of tags" [value]="tag" class="dropdown-item">{{tag}}</option>
-            </div>
+          <div class="dropdown-menu form-group" id="tag" name="tag" [(ngModel)]="model.tag" required >
+            <option *ngFor="let tag of tags" [value]="tag" class="dropdown-item">{{tag}}</option>
+          </div>
         </div>
         <form (ngSubmit)="onSubmit()" #AnswerForm="ngForm" >
           <textarea class="form-control form-border" id="answer" rows="3" placeholder="Answer (optional)" [(ngModel)]="modelAnswer.answer" name="answer"></textarea>
-          
         </form>
         <div class="form-group">
           <input type="text" class="form-control form-border" id="company" placeholder="Company Name (optional)" [(ngModel)]="model.company" name="company">
@@ -23,7 +22,7 @@
         <div class="form-group">
           <input type="text" class="form-control form-border" id="interviewer" placeholder="Interviewer Name (optional)" [(ngModel)]="model.interviewer" name="interviewer">
         </div>
-        <button routerLink= "" type="submit" class="add-question-button btn btn-primary" [disabled]="QuestionForm.invalid" (click)="newQuestion()">Submit</button>
+        <button routerLink="" type="submit" class="add-question-button btn btn-primary" [disabled]="QuestionForm.invalid" (click)="newQuestion()">Submit</button>
     </form>
   </div>
   
