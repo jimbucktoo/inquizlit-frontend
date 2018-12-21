@@ -40,8 +40,11 @@ export class QuestionsComponent implements OnInit {
 
     getNumberOfAnswers(id) {
         let count = this.answers.filter(answer => answer.question_id === id).length;
+        if (count > 0){
+            return count;
+        }
         // console.log(count)
-        return count;
+        
     }
 
     filterQuestions(event) {
