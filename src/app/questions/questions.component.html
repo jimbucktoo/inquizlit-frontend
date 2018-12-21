@@ -7,7 +7,6 @@
                 <span class="sr-only">Toggle Dropdown</span>
             </button>
             <div class="dropdown-menu">
-                <option class="dropdown-item">Most Recent</option>
                 <option class="dropdown-item" (click)="filterQuestions($event);" value="Most Popular">Most Popular</option>
                 <option class="dropdown-item" (click)="filterQuestions($event);">Cultural</option>
                 <option class="dropdown-item" (click)="filterQuestions($event);">Algorithms</option>
@@ -26,10 +25,10 @@
         <div class="question-content" routerLink="specific/{{question.id}}">
             <div class="question-header">
                 <h5 class="mb-1">{{question.question}}</h5>
-                <small>User: {{question.username}}</small>
             </div>
             <div class="bottom-bar">
-                <small># of Answers: {{getNumberOfAnswers(question.id)}}</small>
+                <small>User: {{question.username}}</small>
+                <small>{{getNumberOfAnswers(question.id)}} Answers</small>
                 <small>Tag: {{question.tag}}</small>
             </div>
         </div>

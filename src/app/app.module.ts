@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { AddQuestionComponent } from './add-question/add-question.component';
         LoginComponent,
         QuestionSpecificComponent,
         SignUpComponent,
-        AddQuestionComponent
+        AddQuestionComponent,
+        FooterComponent
     ],
     imports: [
         BrowserModule,
