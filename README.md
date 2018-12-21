@@ -4,7 +4,7 @@ inQuizlit is a full stack application created to allow users to post tech interv
 
 ##Links
 
-* [inQuizlit](https://heroku.com/) - inQuizlit official website.
+* [inQuizlit](https://inquizlit.surge.sh/) - inQuizlit official website.
 * [inQuizlit Front-End Repository](https://github.com/jimbucktoo/inquizlit-frontend) - inQuizlit front-end Github repository.
 * [inQuizlit Back-End Repository](https://github.com/keschaefer/inquizlit-backend) - inQuizlit back-end Github repository.
 
@@ -42,8 +42,6 @@ ng build
 ng serve -o
 ```
 
-## Deployment
-
 ## Technologies
 
 * [Angular](https://www.angular.io) - Angular is a TypeScript-based open-source front-end web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.
@@ -56,3 +54,8 @@ ng serve -o
 * [keschaefer](https://www.github.com/keschaefer) - Kate Schaefer
 * [jtawilliams](https://www.github.com/jtawilliams) - Justin Williams
 
+## Preview 
+
+![snag.gy](https://snag.gy/HiwnpC.jpg)
+![snag.gy](https://snag.gy/z9eGAO.jpg)
+![snag.gy](https://snag.gy/43nULA.jpg)
