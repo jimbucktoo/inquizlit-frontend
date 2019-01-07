@@ -2,7 +2,7 @@
 
 inQuizlit is a full stack application created to allow users to post tech interview questions and then crowd source answers from other users. The answers are then sorted using Reddit's sorting algorithm.
 
-##Links
+## Links
 
 * [inQuizlit](https://inquizlit.surge.sh/) - inQuizlit official website.
 * [inQuizlit Front-End Repository](https://github.com/jimbucktoo/inquizlit-frontend) - inQuizlit front-end Github repository.
