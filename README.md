@@ -53,9 +53,3 @@ ng serve -o
 * [jimbucktoo](https://www.github.com/jimbucktoo) - Jimmy Liang
 * [keschaefer](https://www.github.com/keschaefer) - Kate Schaefer
 * [jtawilliams](https://www.github.com/jtawilliams) - Justin Williams
-
-## Preview 
-
-![snag.gy](https://snag.gy/HiwnpC.jpg)
-![snag.gy](https://snag.gy/z9eGAO.jpg)
-![snag.gy](https://snag.gy/43nULA.jpg)
