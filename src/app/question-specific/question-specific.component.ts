@@ -27,10 +27,11 @@ export class QuestionSpecificComponent implements OnInit {
     answers: any;
     question_id: any;
     filteredAnswers: any;
-    model = new NewAnswer("", this.question_id, 1, 0, 0);
+    model: any;
 
     constructor(private qsrv: GetQuestionsService, private asrv: GetAnswersService, private asrvpost: AddAnswerService, route: ActivatedRoute) {
         this.question_id = route.snapshot.params['id'];
+        this.model = new NewAnswer("", +this.question_id, 1, 0, 0);
     };
 
     ngOnInit() {
@@ -43,9 +44,7 @@ export class QuestionSpecificComponent implements OnInit {
             this.questionBool = true;
         } else {
             this.questionBool = false;
-            this.filteredAnswers = this.answers.filter(answer => answer.question_id == this.question_id);
-            console.log(this.answers);
-            console.log(this.filteredAnswers);
+            this.getAnswers();
         };
     };
 
@@ -60,14 +59,16 @@ export class QuestionSpecificComponent implements OnInit {
     getAnswers() {
         this.asrv.getData().subscribe(payload => {
             this.answers = payload;
-            this.filteredAnswers = this.answers;
+            this.filteredAnswers = this.answers.filter(answer => answer.question_id == this.question_id);
         })
     };
 
     newAnswer(){
-        this.asrvpost.postAnswer(this.model);
-        this.hideQuestion();
-    };
+        this.asrvpost.postAnswer(this.model)
+        .then(() => {
+            this.hideQuestion();
+        })
+    }
 
     upVoteAnswer(id) {
         fetch(`https://inquizlit-backend.herokuapp.com/answers/${id}/upvote`, {

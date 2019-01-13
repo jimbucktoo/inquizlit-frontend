@@ -7,9 +7,10 @@ import {HttpClient} from "@angular/common/http";
 export class AddAnswerService {
 
   constructor(private http:HttpClient) { }
-
-    postAnswer(newAnswer: any){
-      fetch("https://inquizlit-backend.herokuapp.com/answers/", {
+    
+  postAnswer(newAnswer: any)  {
+    return (
+        fetch("https://inquizlit-backend.herokuapp.com/answers/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json; charset=utf-8"
@@ -17,7 +18,6 @@ export class AddAnswerService {
         body: JSON.stringify(newAnswer)
       })
       .then(response => (response.json()))
-      .then(response => console.log(response))
-    };
-
-  };
+    )}
+    
+}
