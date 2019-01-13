@@ -12,23 +12,29 @@ import { NewAnswer } from "../new-answer";
 
 export class AddQuestionComponent implements OnInit {
     form: any;
-
-    tags = ["Culture Fit", "Algorithms", "Computer Science", "Riddles"];
-
+    tags = ["Select Question Tag", "Culture Fit", "Algorithms", "Computer Science", "Riddles"];
+    questions: any;
     model = new NewQuestion();
-
-    modelAnswer = new NewAnswer("", 3, 1, 0, 0);
+    modelAnswer= new NewAnswer("", 0, 1, 0, 0);
 
     onSubmit() {
     };
 
-    constructor(private qsrv: AddQuestionService, private asrv: AddAnswerService) { }
+    constructor(private qsrvpost: AddQuestionService, private asrvpost: AddAnswerService) {}
 
     ngOnInit() {
+       
     };
 
     newQuestion() {
-        this.qsrv.postQuestion(this.model);
-        this.asrv.postAnswer(this.modelAnswer);
+        this.qsrvpost.postQuestion(this.model)
+        .then(response =>{
+            return response[0].id
+        })  
+        .then((response) => {
+            this.modelAnswer.question_id = response;
+            this.asrvpost.postAnswer(this.modelAnswer);
+        });
     };
+
 };
