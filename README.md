@@ -4,7 +4,8 @@ inQuizlit is a full stack application created to allow users to post tech interv
 
 ## Links
 
-* [inQuizlit](https://inquizlit.surge.sh/) - inQuizlit official website.
+* [inQuizlit Website](https://inquizlit.surge.sh/) - inQuizlit official website.
+* [inQuizlit Server](https://inquizlit.surge.sh/) - inQuizlit official server.
 * [inQuizlit Front-End Repository](https://github.com/jimbucktoo/inquizlit-frontend) - inQuizlit front-end Github repository.
 * [inQuizlit Back-End Repository](https://github.com/keschaefer/inquizlit-backend) - inQuizlit back-end Github repository.
 
