@@ -19,6 +19,8 @@
         <div class="form-group">
           <input type="text" class="form-control form-border" id="interviewer" placeholder="Interviewer Name (optional)" [(ngModel)]="model.interviewer" name="interviewer">
         </div> -->
-        <button routerLink="" type="submit" class="add-question-button btn btn-primary" [disabled]="QuestionForm.invalid" (click)="newQuestion()">Submit</button>
+        <button type="submit" class="add-question-button btn btn-primary" [disabled]="QuestionForm.invalid" (click)="newQuestion()">Submit</button>
     </form>
   </div>
+
+  <!-- routerLink=""  -->

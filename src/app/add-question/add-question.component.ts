@@ -3,6 +3,7 @@ import { NewQuestion } from "../new-question";
 import { AddQuestionService } from "../add-question.service";
 import { AddAnswerService } from "../add-answer.service";
 import { NewAnswer } from "../new-answer";
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
     selector: "app-add-question",
@@ -12,7 +13,7 @@ import { NewAnswer } from "../new-answer";
 
 export class AddQuestionComponent implements OnInit {
     form: any;
-    tags = ["Select Question Tag", "Culture Fit", "Algorithms", "Computer Science", "Riddles"];
+    tags = ["Culture Fit", "Algorithms", "Computer Science", "Riddles"];
     questions: any;
     model = new NewQuestion();
     modelAnswer= new NewAnswer("", 0, 1, 0, 0);
@@ -20,21 +21,28 @@ export class AddQuestionComponent implements OnInit {
     onSubmit() {
     };
 
-    constructor(private qsrvpost: AddQuestionService, private asrvpost: AddAnswerService) {}
+    constructor(private qsrvpost: AddQuestionService, private asrvpost: AddAnswerService, private route: ActivatedRoute, private router: Router, ) {}
 
     ngOnInit() {
        
     };
 
     newQuestion() {
+        console.log("entering newQuestion function")
+        this.model.tag = this.model.tag.toLowerCase();
         this.qsrvpost.postQuestion(this.model)
         .then(response =>{
             return response[0].id
         })  
         .then((response) => {
+            console.log("entering send answer function")
             this.modelAnswer.question_id = response;
-            this.asrvpost.postAnswer(this.modelAnswer);
-        });
+            return this.asrvpost.postAnswer(this.modelAnswer);
+        })
+        .then(() => {
+            this.router.navigate([""])
+        })
+
     };
 
 };
