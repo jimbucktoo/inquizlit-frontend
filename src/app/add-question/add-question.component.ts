@@ -3,7 +3,7 @@ import { NewQuestion } from "../new-question";
 import { AddQuestionService } from "../add-question.service";
 import { AddAnswerService } from "../add-answer.service";
 import { NewAnswer } from "../new-answer";
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: "app-add-question",
@@ -23,26 +23,23 @@ export class AddQuestionComponent implements OnInit {
 
     constructor(private qsrvpost: AddQuestionService, private asrvpost: AddAnswerService, private route: ActivatedRoute, private router: Router, ) {}
 
-    ngOnInit() {
-       
+    ngOnInit() {   
+
     };
 
     newQuestion() {
-        console.log("entering newQuestion function")
         this.model.tag = this.model.tag.toLowerCase();
         this.qsrvpost.postQuestion(this.model)
         .then(response =>{
             return response[0].id
         })  
         .then((response) => {
-            console.log("entering send answer function")
             this.modelAnswer.question_id = response;
             return this.asrvpost.postAnswer(this.modelAnswer);
         })
         .then(() => {
             this.router.navigate([""])
         })
-
     };
 
 };
