@@ -9,15 +9,14 @@ export class AddQuestionService {
   constructor(private http:HttpClient) { }
 
     postQuestion(newQuestion: any){
-      fetch("https://inquizlit-backend.herokuapp.com/questions", {
+      return (
+        fetch("http://localhost:3001/questions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         },
         body: JSON.stringify(newQuestion)
-      })
-      .then(response => (response.json()))
-      .then(response => (console.log(response)))
-    };
-
+        })
+        .then(response => (response.json()))
+      )};
   };

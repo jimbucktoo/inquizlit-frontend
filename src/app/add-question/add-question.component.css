@@ -18,6 +18,10 @@ form {
    margin-top: 20px;
 }
 
+.menu {
+   margin-top: 1rem;
+}
+
 .add-question-button, .dropdown-button {
     margin-top: 1em;
 }
