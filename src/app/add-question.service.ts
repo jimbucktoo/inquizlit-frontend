@@ -10,7 +10,7 @@ export class AddQuestionService {
 
     postQuestion(newQuestion: any){
       return (
-        fetch("http://localhost:3001/questions", {
+        fetch("https://inquizlit-backend.herokuapp.com/questions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json; charset=utf-8"
