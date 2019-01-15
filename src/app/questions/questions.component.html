@@ -3,7 +3,7 @@
         <div class="filterDropdown btn-group">
             <button type="button" class="btn btn-primary">Filter</button>
             <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
+                                                                                                                       aria-expanded="false">
                 <span class="sr-only">Toggle Dropdown</span>
             </button>
             <div class="dropdown-menu">
@@ -16,13 +16,13 @@
         </div>
         <button routerLink="add" type="button" class="addButton float-right btn btn-danger">Add Question</button>
     </div>
-    <div class="list-group-item list-group-item-action ind-question" *ngFor="let question of filteredQuestions">
+    <div class="list-group-item list-group-item-action ind-question" routerLink="specific/{{question.id}}" *ngFor="let question of filteredQuestions">
         <div class="votes">
             <fa-icon [icon]="faChevronUp" (click)="upVoteQuestion(question.id)"></fa-icon>
             <div>{{question.upvotes - question.downvotes}}</div>
             <fa-icon [icon]="faChevronDown" (click)="downVoteQuestion(question.id)"></fa-icon>
         </div>
-        <div class="question-content" routerLink="specific/{{question.id}}">
+        <div class="question-content">
             <div class="question-header">
                 <h5 class="mb-1">{{question.question}}</h5>
             </div>

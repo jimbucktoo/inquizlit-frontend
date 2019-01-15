@@ -14,7 +14,7 @@
     <div class="question-container-two" [class.hide]="questionBool">
         <div class="question">
             <p><b>Question: </b>{{question}}</p>
-            <button class="btn btn-secondary margin-right-0" (click)="hideQuestion()">Return to Question</button>
+            <button class="btn btn-secondary margin-right-0 return-to-question" (click)="hideQuestion()">Return to Question</button>
         </div>
         <div class="answer-container" *ngFor="let answer of filteredAnswers">
             <div class="votes">
@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="arrows">
-        <a href="/specific"><fa-icon [icon]="faChevronLeft" class="left-arrow"></fa-icon></a>
-        <a href="/specific"><fa-icon [icon]="faChevronRight" class="right-arrow"></fa-icon></a>
+        <a href="/"><fa-icon [icon]="faChevronLeft" class="left-arrow"></fa-icon></a>
+        <a href="/"><fa-icon [icon]="faChevronRight" class="right-arrow"></fa-icon></a>
     </div>
 </div>

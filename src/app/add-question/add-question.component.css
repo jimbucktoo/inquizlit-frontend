@@ -1,25 +1,25 @@
 .custom-container {
-   margin-left: 40%;
-   margin-right: 40%;
-   margin-top: 5%;
-   margin-bottom: 5%;
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-   min-height: 70vh;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 70vh;
 }
 
 img {
-   width: 100%;
-   border-radius: 10px;
+    width: 100%;
+    border-radius: 10px;
 }
 
 form {
-   margin-top: 20px;
+    margin-top: 20px;
 }
 
 .menu {
-   margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 .add-question-button, .dropdown-button {
@@ -27,6 +27,10 @@ form {
 }
 
 .form-border {
-   border: 1px solid black;
-   margin-top: 1em;
+    border: 1px solid black;
+    margin-top: 1em;
+}
+
+.select-question {
+    border: 1px solid black !important;
 }

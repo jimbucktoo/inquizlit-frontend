@@ -77,3 +77,7 @@
 .hide {
     display: none;
 }
+
+.return-to-question {
+    height: 50px;
+}
