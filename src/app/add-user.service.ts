@@ -31,5 +31,4 @@ export class AddNewUserService {
         .then(response => (response.json()))
     )
   };
-
 };

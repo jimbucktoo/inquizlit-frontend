@@ -11,7 +11,8 @@ import { AddNewUserService } from '../add-user.service';
 export class SignUpComponent implements OnInit {
 
   form: any;
-  model = new NewUser();
+  model = new NewUser("", "", "", "", "");
+  message: any;
 
   onSubmit() {
   };
@@ -20,9 +21,21 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit() {
   };
+  // sendToHome() {
+  //   this.router.navigateByUrl("");
+  //   // this.usrv.sendUser(this.model);
+  // };
 
   newUser() {
-      this.service.postUser(this.model);
+    // this.service.postUser(this.model);
+    // this.service.postUser(this.model).then(response => {
+    //   if (response === "user already exists") {
+    //     this.message = response
+    //   } else {
+    //     console.log(response)
+    //     // this.sendToHome();
+    //   }
+    // })
   };
-  
+
 }
