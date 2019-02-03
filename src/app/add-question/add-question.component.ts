@@ -42,7 +42,7 @@ export class AddQuestionComponent implements OnInit {
                 return this.asrvpost.postAnswer(this.modelAnswer);
             })
             .then(() => {
-                this.router.navigate([""])
+                this.router.navigate(["/dashboard"])
             })
     };
 
