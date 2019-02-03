@@ -27,19 +27,23 @@ export class AddQuestionComponent implements OnInit {
 
     };
 
+    cancel() {   
+        this.router.navigateByUrl('dashboard');
+    };
+
     newQuestion() {
         this.model.tag = this.model.tag.toLowerCase();
         this.qsrvpost.postQuestion(this.model)
-        .then(response =>{
-            return response[0].id
-        })  
-        .then((response) => {
-            this.modelAnswer.question_id = response;
-            return this.asrvpost.postAnswer(this.modelAnswer);
-        })
-        .then(() => {
-            this.router.navigate([""])
-        })
+            .then(response =>{
+                return response[0].id
+            })  
+            .then((response) => {
+                this.modelAnswer.question_id = response;
+                return this.asrvpost.postAnswer(this.modelAnswer);
+            })
+            .then(() => {
+                this.router.navigate([""])
+            })
     };
 
 };

@@ -15,7 +15,7 @@ export class QuestionsComponent implements OnInit {
     faChevronDown = faChevronDown;
     questions: any;
     answers: any;
-    filteredQuestions: any;
+    filteredQuestions: any = [];
 
     constructor(private srv: GetQuestionsService, private asrv: GetAnswersService) { }
 

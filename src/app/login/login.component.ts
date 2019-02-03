@@ -4,30 +4,30 @@ import { SigninUser } from "../signin-user";
 import { AddNewUserService } from "../add-user.service";
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"]
+    selector: "app-login",
+    templateUrl: "./login.component.html",
+    styleUrls: ["./login.component.css"]
 })
 
 export class LoginComponent implements OnInit {
 
-  model = new SigninUser("", "");
+    model = new SigninUser("", "");
 
-  constructor(private router: Router, private usrv: AddNewUserService) { }
+    constructor(private router: Router, private usrv: AddNewUserService) { }
 
-  onSubmit() {
-  };
-  
-  ngOnInit() {
-  };
+    onSubmit() {
+    };
 
-  sendToSignUp() {
-    this.router.navigateByUrl("/signup");
-  };
+    ngOnInit() {
+    };
 
-  sendToHome() {
-    this.router.navigateByUrl("");
-    // this.usrv.sendUser(this.model);
-  };
+    sendToSignUp() {
+        this.router.navigateByUrl("/signup");
+    };
+
+    sendToHome() {
+        this.router.navigateByUrl("/dashboard");
+        // this.usrv.sendUser(this.model);
+    };
 
 };

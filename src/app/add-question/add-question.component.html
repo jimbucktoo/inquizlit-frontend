@@ -19,6 +19,9 @@
             <div class="form-group">
             <input type="text" class="form-control form-border" id="interviewer" placeholder="Interviewer Name (optional)" [(ngModel)]="model.interviewer" name="interviewer">
             </div> -->
-            <button type="submit" class="add-question-button btn btn-primary" [disabled]="QuestionForm.invalid" (click)="newQuestion()">Submit</button>
+            <div class="space-around">
+                <button type="submit" class="add-question-button btn btn-primary" [disabled]="QuestionForm.invalid" (click)="newQuestion()">Submit</button>
+                <button class="add-question-button btn btn-danger" (click)="cancel()">Cancel</button>
+            </div>
     </form>
 </div>

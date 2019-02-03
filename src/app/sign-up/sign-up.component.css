@@ -1,32 +1,26 @@
 .custom-container {
-   margin-left: 40%;
-   margin-right: 40%;
-   margin-top: 5%;
-   margin-bottom: 5%;
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-   min-height: 70vh;
+    margin-left: 40%;
+    margin-right: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 70vh;
 }
 
 img {
-   width: 100%;
-   border-radius: 10px;
+    width: 100%;
+    border-radius: 10px;
 }
 
 form {
-   margin-top: 20px;
+    margin-top: 20px;
 }
 
 .sign-button {
-   display: flex;
-   justify-content: center;
-}
-
-.sign-up-button {
-    margin-left: 10px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .form-border {
-   border: 1px solid black;
+    border: 1px solid black;
 }

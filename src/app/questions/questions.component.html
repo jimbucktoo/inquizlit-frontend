@@ -14,9 +14,9 @@
                 <option class="dropdown-item" (click)="filterQuestions($event);">Riddles</option>
             </div>
         </div>
-        <button routerLink="add" type="button" class="addButton float-right btn btn-danger">Add Question</button>
+        <button routerLink="/add" type="button" class="addButton float-right btn btn-danger">Add Question</button>
     </div>
-    <div class="list-group-item list-group-item-action ind-question" routerLink="specific/{{question.id}}" *ngFor="let question of filteredQuestions">
+    <div class="list-group-item list-group-item-action ind-question" routerLink="/specific/{{question.id}}" *ngFor="let question of filteredQuestions">
         <div class="votes">
             <fa-icon [icon]="faChevronUp" (click)="upVoteQuestion(question.id)"></fa-icon>
             <div>{{question.upvotes - question.downvotes}}</div>
