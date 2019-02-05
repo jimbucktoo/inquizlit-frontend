@@ -1,27 +1,21 @@
-<div class="custom-container">
-    <img src="../assets/inQuizlit.png">
-    <form (ngSubmit)="onSubmit()" #QuestionForm="ngForm">
+<div class='custom-container'>
+    <img src='../assets/inQuizlit.png'>
+    <form (ngSubmit)='onSubmit()' #QuestionForm='ngForm'>
         <div>
-            <textarea class="form-control form-border" id="question" rows="3" placeholder="Question" name="question" [(ngModel)]="model.question" required ></textarea>
+            <textarea class='form-control form-border' id='question' rows='3' placeholder='Question' name='question' [(ngModel)]='model.question' required ></textarea>
         </div>
-        <div class="form-group menu">
-            <select class="form-control select-question" id="tag" [(ngModel)]="model.tag" name="tag">
-                <option value= "" selected disabled hidden>Select Question Tag</option>
-                <option *ngFor="let tag of tags" [value]="tag">{{tag}}</option>
+        <div class='form-group menu'>
+            <select class='form-control select-question' id='tag' [(ngModel)]='model.tag' name='tag'>
+                <option value= '' selected disabled hidden>Select Question Tag</option>
+                <option *ngFor='let tag of tags' [value]='tag'>{{tag}}</option>
             </select>
         </div>
-        <form (ngSubmit)="onSubmit()" #AnswerForm="ngForm" >
-            <textarea class="form-control form-border" id="answer" rows="3" placeholder="Answer (Not Required)" [(ngModel)]="modelAnswer.answer" name="answer"></textarea>
+        <form (ngSubmit)='onSubmit()' #AnswerForm='ngForm' >
+            <textarea class='form-control form-border' id='answer' rows='3' placeholder='Answer (Not Required)' [(ngModel)]='modelAnswer.answer' name='answer'></textarea>
         </form>
-        <!-- <div class="form-group">
-            <input type="text" class="form-control form-border" id="company" placeholder="Company Name (optional)" [(ngModel)]="model.company" name="company">
-            </div>
-            <div class="form-group">
-            <input type="text" class="form-control form-border" id="interviewer" placeholder="Interviewer Name (optional)" [(ngModel)]="model.interviewer" name="interviewer">
-            </div> -->
-            <div class="space-around">
-                <button type="submit" class="add-question-button btn btn-primary" [disabled]="QuestionForm.invalid" (click)="newQuestion()">Submit</button>
-                <button class="add-question-button btn btn-danger" (click)="cancel()">Cancel</button>
-            </div>
+        <div class='space-around'>
+            <button type='submit' class='add-question-button btn btn-primary' [disabled]='QuestionForm.invalid' (click)='newQuestion()'>Submit</button>
+            <button class='add-question-button btn btn-danger' (click)='cancel()'>Cancel</button>
+        </div>
     </form>
 </div>

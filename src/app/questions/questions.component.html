@@ -1,32 +1,32 @@
-<div *ngIf="questions" class="custom-container list-group">
-    <div class="top-bar">
-        <div class="filterDropdown btn-group">
-            <button type="button" class="btn btn-primary">Filter</button>
-            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
-                                                                                                                       aria-expanded="false">
-                <span class="sr-only">Toggle Dropdown</span>
+<div *ngIf='questions' class='custom-container list-group'>
+    <div class='top-bar'>
+        <div class='filterDropdown btn-group'>
+            <button type='button' class='btn btn-primary'>Filter</button>
+            <button type='button' class='btn btn-primary dropdown-toggle dropdown-toggle-split' data-toggle='dropdown' aria-haspopup='true'
+                    aria-expanded='false'>
+                <span class='sr-only'>Toggle Dropdown</span>
             </button>
-            <div class="dropdown-menu">
-                <option class="dropdown-item" (click)="filterQuestions($event);" value="Most Popular">Most Popular</option>
-                <option class="dropdown-item" (click)="filterQuestions($event);">Cultural</option>
-                <option class="dropdown-item" (click)="filterQuestions($event);">Algorithms</option>
-                <option class="dropdown-item" (click)="filterQuestions($event);">Computer Science</option>
-                <option class="dropdown-item" (click)="filterQuestions($event);">Riddles</option>
+            <div class='dropdown-menu'>
+                <option class='dropdown-item' (click)='filterQuestions($event)' value='Most Popular'>Most Popular</option>
+                <option class='dropdown-item' (click)='filterQuestions($event)'>Cultural</option>
+                <option class='dropdown-item' (click)='filterQuestions($event)'>Algorithms</option>
+                <option class='dropdown-item' (click)='filterQuestions($event)'>Computer Science</option>
+                <option class='dropdown-item' (click)='filterQuestions($event)'>Riddles</option>
             </div>
         </div>
-        <button routerLink="/add" type="button" class="addButton float-right btn btn-danger">Add Question</button>
+        <button routerLink='/add' type='button' class='addButton float-right btn btn-danger'>Add Question</button>
     </div>
-    <div class="list-group-item list-group-item-action ind-question" *ngFor="let question of filteredQuestions">
-        <div class="votes">
-            <fa-icon [icon]="faChevronUp" (click)="upVoteQuestion(question.id)"></fa-icon>
+    <div class='list-group-item list-group-item-action ind-question' *ngFor='let question of filteredQuestions'>
+        <div class='votes'>
+            <fa-icon [icon]='faChevronUp' (click)='upVoteQuestion(question.id)'></fa-icon>
             <div>{{question.upvotes - question.downvotes}}</div>
-            <fa-icon [icon]="faChevronDown" (click)="downVoteQuestion(question.id)"></fa-icon>
+            <fa-icon [icon]='faChevronDown' (click)='downVoteQuestion(question.id)'></fa-icon>
         </div>
-        <div class="question-content" routerLink="/specific/{{question.id}}">
-            <div class="question-header">
-                <h5 class="mb-1">{{question.question}}</h5>
+        <div class='question-content' routerLink='/specific/{{question.id}}'>
+            <div class='question-header'>
+                <h5 class='mb-1'>{{question.question}}</h5>
             </div>
-            <div class="bottom-bar">
+            <div class='bottom-bar'>
                 <small>User: {{question.username}}</small>
                 <small>{{getNumberOfAnswers(question.id)}} Answers</small>
                 <small>Tag: {{question.tag}}</small>

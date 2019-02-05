@@ -1,30 +1,30 @@
-<div class="parent-container">
-    <div *ngIf="question" class="question-container" [class.hide]="!questionBool">
+<div class='parent-container'>
+    <div *ngIf='question' class='question-container' [class.hide]='!questionBool'>
         <p><b>Question: </b>{{question}}</p>
-        <form class="form-group" (ngSumbit)="onSubmit()" #AnswerForm="ngForm">
-            <label for="exampleTextarea"></label>
-            <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Enter Answer" name="answer" [(ngModel)]="model.answer"></textarea>
+        <form class='form-group' (ngSumbit)='onSubmit()' #AnswerForm='ngForm'>
+            <label for='exampleTextarea'></label>
+            <textarea class='form-control' id='exampleTextarea' rows='3' placeholder='Enter Answer' name='answer' [(ngModel)]='model.answer'></textarea>
         </form>
-        <div class="buttons">
-            <button type="submit" class="btn btn-primary margin-right-0" [disabled]="AnswerForm.invalid" (click)="newAnswer()">Submit</button>
-            <button class="btn btn-secondary margin-left-10 margin-right-0" (click)="hideQuestion()">Show Answers</button>
+        <div class='buttons'>
+            <button type='submit' class='btn btn-primary margin-right-0' [disabled]='AnswerForm.invalid' (click)='newAnswer()'>Submit</button>
+            <button class='btn btn-secondary margin-left-10 margin-right-0' (click)='hideQuestion()'>Show Answers</button>
         </div>
     </div>
 
-    <div class="question-container-two" [class.hide]="questionBool">
-        <div class="question">
+    <div class='question-container-two' [class.hide]='questionBool'>
+        <div class='question'>
             <p><b>Question: </b>{{question}}</p>
-            <button class="btn btn-secondary margin-right-0 return-to-question" (click)="hideQuestion()">Return to Question</button>
+            <button class='btn btn-secondary margin-right-0 return-to-question' (click)='hideQuestion()'>Return to Question</button>
         </div>
-        <div class="answer-container" *ngFor="let answer of filteredAnswers">
-            <div class="votes">
-                <fa-icon [icon]="faChevronUp" (click)="upVoteAnswer(answer.id)"></fa-icon>
+        <div class='answer-container' *ngFor='let answer of filteredAnswers'>
+            <div class='votes'>
+                <fa-icon [icon]='faChevronUp' (click)='upVoteAnswer(answer.id)'></fa-icon>
                 <div>{{answer.upvotes - answer.downvotes}}</div>
-                <fa-icon [icon]="faChevronDown" (click)="downVoteAnswer(answer.id)"></fa-icon>
+                <fa-icon [icon]='faChevronDown' (click)='downVoteAnswer(answer.id)'></fa-icon>
             </div>
-            <div class="answer">
+            <div class='answer'>
                 <p><b>Answer: </b>{{answer.answer}}</p>
-                <small class="username">User: {{answer.username}}</small>
+                <small class='username'>User: {{answer.username}}</small>
             </div>
         </div>
     </div>
