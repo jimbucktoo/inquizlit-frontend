@@ -7,11 +7,11 @@ import { SignUpComponent } from "./sign-up/sign-up.component";
 import { AddQuestionComponent } from "./add-question/add-question.component";
 
 const routes: Routes = [
-    { path: "", component: LoginComponent },
     { path: "specific/:id", component: QuestionSpecificComponent },
     { path: "signup", component: SignUpComponent },
     { path: "add", component: AddQuestionComponent},
     { path: "dashboard", component: QuestionsComponent},
+    { path: "", component: LoginComponent },
 ];
 
 @NgModule({
