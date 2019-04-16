@@ -32,6 +32,15 @@
     width: 100%;
 }
 
+.question-content:focus {
+    outline: 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em;
+    justify-content: center;
+    width: 100%;
+}
+
 .question-content small {
     padding-right: 2em;
 }
