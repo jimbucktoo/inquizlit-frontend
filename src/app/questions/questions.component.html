@@ -1,4 +1,4 @@
-<div *ngIf='questions' class='custom-container list-group'>
+<div *ngIf='questions; else noServer' class='custom-container list-group'>
     <div class='top-bar'>
         <div class='filterDropdown btn-group'>
             <button type='button' class='btn btn-primary'>Filter</button>
@@ -34,3 +34,22 @@
         </div>
     </div>
 </div>
+<ng-template #noServer>
+    <div class="d-flex justify-content-center loader">
+        <div class="spinner-grow text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-success" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-warning" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-dark" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+</ng-template>

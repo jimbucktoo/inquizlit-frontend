@@ -22,12 +22,10 @@ export class QuestionsComponent implements OnInit {
     ngOnInit() {
         this.getQuestions()
         this.getAnswers()
-
     }
 
     getQuestions() {
         this.srv.getData().subscribe(payload => {
-            console.log('refreshing questions page')
             this.questions = payload
             this.filteredQuestions = this.questions
         })
@@ -40,9 +38,12 @@ export class QuestionsComponent implements OnInit {
     }
 
     getNumberOfAnswers(id) {
-        let count = this.answers.filter(answer => answer.question_id === id).length
-        if (count > 0) {
-            return count
+        if (this.answers !== undefined){
+            let count = this.answers.filter(answer => answer.question_id === id).length
+            if (count > 0) {
+                return count
+            }
+            return 0
         }
         return 0
     }
