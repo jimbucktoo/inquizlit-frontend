@@ -1,15 +1,35 @@
 .custom-container {
-    margin-left: 40%;
-    margin-right: 40%;
+    margin-left: 37vw;
+    margin-right: 37vw;
+    margin-top: 3%;
+    margin-bottom: 3%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    min-height: 70vh;
+    min-height: 80vh;
 }
 
 img {
     width: 100%;
     border-radius: 10px;
+}
+
+@media (max-width: 575px) { 
+    .custom-container {
+        margin-left: 10vw;
+        margin-right: 10vw;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 80vh;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
 }
 
 form {
