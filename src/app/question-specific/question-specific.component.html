@@ -10,8 +10,7 @@
             <button class='btn btn-secondary margin-left-10 margin-right-0' (click)='hideQuestion()'>Show Answers</button>
         </div>
     </div>
-
-    <div class='question-container-two' [class.hide]='questionBool'>
+    <div class='question-container' [class.hide]='questionBool'>
         <div class='question'>
             <p><b>Question: </b>{{question}}</p>
             <button class='btn btn-secondary margin-right-0 return-to-question' (click)='hideQuestion()'>Return to Question</button>

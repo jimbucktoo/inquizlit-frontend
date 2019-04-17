@@ -1,10 +1,26 @@
 .custom-container {
-    margin-left: 40%;
-    margin-right: 40%;
+    margin-left: 37vw;
+    margin-right: 37vw;
     display: flex;
     justify-content: center;
     flex-direction: column;
     min-height: 80vh;
+}
+
+@media (max-width: 575px) { 
+    .custom-container {
+        margin-left: 10vw;
+        margin-right: 10vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 80vh;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
 }
 
 img {
