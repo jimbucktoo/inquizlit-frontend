@@ -49,6 +49,7 @@ form {
 
 .select-question {
     border: 1px solid black !important;
+    cursor: pointer;
 }
 
 .space-around {

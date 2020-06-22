@@ -3,7 +3,7 @@
         <p><b>Question: </b>{{question}}</p>
         <form class='form-group' (ngSumbit)='onSubmit()' #AnswerForm='ngForm'>
             <label for='exampleTextarea'></label>
-            <textarea class='form-control' id='exampleTextarea' rows='3' placeholder='Enter Answer' name='answer' [(ngModel)]='model.answer'></textarea>
+            <textarea class='form-control' id='exampleTextarea' rows='3' name='answer' [(ngModel)]='model.answer'></textarea>
         </form>
         <div class='buttons'>
             <button type='submit' class='btn btn-primary margin-right-0' [disabled]='AnswerForm.invalid' (click)='newAnswer()'>Submit</button>

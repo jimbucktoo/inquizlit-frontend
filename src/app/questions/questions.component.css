@@ -39,6 +39,7 @@
 
 .ind-question {
     display: flex;
+    cursor: pointer;
 }
 
 .question-content {
@@ -72,4 +73,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#filterButton:focus {
+    box-shadow: none;
 }

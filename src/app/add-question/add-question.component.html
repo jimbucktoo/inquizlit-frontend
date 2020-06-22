@@ -11,7 +11,7 @@
             </select>
         </div>
         <form (ngSubmit)='onSubmit()' #AnswerForm='ngForm' >
-            <textarea class='form-control form-border' id='answer' rows='3' placeholder='Answer (Not Required)' [(ngModel)]='modelAnswer.answer' name='answer'></textarea>
+            <textarea class='form-control form-border' id='answer' rows='3' placeholder='Answer' [(ngModel)]='modelAnswer.answer' name='answer'></textarea>
         </form>
         <div class='space-around'>
             <button type='submit' class='add-question-button btn btn-primary' [disabled]='QuestionForm.invalid' (click)='newQuestion()'>Submit</button>
