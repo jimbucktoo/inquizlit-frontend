@@ -1,6 +1,6 @@
 .custom-container {
-    margin-left: 37vw;
-    margin-right: 37vw;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 3%;
     display: flex;
     flex-direction: column;
@@ -8,14 +8,17 @@
 }
 
 img {
-    width: 100%;
+    width: 300px;
     border-radius: 10px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-@media (max-width: 575px) { 
+@media (max-width: 600px) { 
     .custom-container {
-        margin-left: 10vw;
-        margin-right: 10vw;
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: 3%;
         display: flex;
         flex-direction: column;
@@ -23,8 +26,8 @@ img {
     }
 
     img {
-        width: 100%;
-        border-radius: 10px;
+        width: 300px;
+        margin-top: 50px;
     }
 }
 
