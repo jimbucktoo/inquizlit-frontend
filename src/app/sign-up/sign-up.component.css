@@ -1,3 +1,15 @@
+form {
+    margin: 0 auto;
+    width: 300px;
+}
+
+img {
+    width: 300px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .custom-container {
     margin-left: auto;
     margin-right: auto;
@@ -7,11 +19,13 @@
     min-height: 80vh;
 }
 
-img {
-    width: 100px;
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
+.form-border {
+    border: 1px solid black;
+}
+
+.sign-button {
+    display: flex;
+    justify-content: space-around;
 }
 
 @media (max-width: 600px) { 
@@ -27,18 +41,9 @@ img {
     img {
         width: 200px;
     }
-}
 
-form {
-    margin: 0 auto;
-    width: 70vw;
-}
-
-.sign-button {
-    display: flex;
-    justify-content: space-around;
-}
-
-.form-border {
-    border: 1px solid black;
+    form {
+        margin: 0 auto;
+        width: 70vw;
+    }
 }
