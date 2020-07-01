@@ -33,6 +33,7 @@ img {
 
 .form {
     margin: 0 auto;
+    width: 70vw;
 }
 
 .sign-button {
@@ -53,12 +54,10 @@ img {
     box-shadow: none;
     border: 2px solid #007bff;
     text-align: center;
-    width: 300px;
 }
 
 #passwordInput {
     box-shadow: none;
     border: 2px solid #007bff;
     text-align: center;
-    width: 300px;
 }

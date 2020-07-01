@@ -16,9 +16,6 @@
                         <div class='form-group'>
                             <input type='password' class='form-control form-border' id='Password1' placeholder='Password' name='password' [(ngModel)]='model.password' >
                         </div>
-                            <div class='form-group'>
-                                <input type='password' class='form-control form-border' id='Password2' placeholder='Re-enter Password'>
-                            </div>
                             <div class='sign-button'>
                                 <button type='submit' [disabled]='NewUserForm.invalid' (click)='newUser()' class='btn btn-primary'>Sign Up</button>
                                 <button (click)='cancel()' class='btn btn-danger'>Cancel</button>
