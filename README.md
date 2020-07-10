@@ -4,7 +4,7 @@ inQuizlit is a full stack application created that allows users to post intervie
 
 ## Links
 
-* [inQuizlit Website](https://inqzlt.surge.sh/) - inQuizlit official website.
+* [inQuizlit Website](https://inquizlit.firebaseapp.com/) - inQuizlit official website.
 * [inQuizlit Server](https://inquizlit-backend.herokuapp.com/questions) - inQuizlit official server.
 * [inQuizlit Front-End Repository](https://github.com/jimbucktoo/inquizlit-frontend) - inQuizlit front-end Github repository.
 * [inQuizlit Back-End Repository](https://github.com/keschaefer/inquizlit-backend) - inQuizlit back-end Github repository.
@@ -17,10 +17,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
-* [NPM](https://www.npmjs.com/) - npm is a package manager for the JavaScript programming language. It is the default package manager for the JavaScript runtime environment Node.js.
-* [Node.js](https://www.nodejs.org/) - Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser.
-* [Angular CLI](https://www.npmjs.com/package/@angular/cli) - Angular is a TypeScript-based open-source front-end web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.
+* [Angular CLI](https://www.npmjs.com/package/@angular/cli) - Auth0 is a flexible, drop-in solution to add authentication and authorization services to your applications.
 * [Heroku](https://www.heroku.com/) - Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+* [Node.js](https://www.nodejs.org/) - Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser.
+* [NPM](https://www.npmjs.com/) - npm is a package manager for the JavaScript programming language. It is the default package manager for the JavaScript runtime environment Node.js.
 
 ### Installing
 
@@ -46,7 +46,11 @@ ng serve -o
 ## Technologies
 
 * [Angular](https://www.angular.io) - Angular is a TypeScript-based open-source front-end web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.
+* [Auth0](https://www.auth0.com) - Angular is a TypeScript-based open-source front-end web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.
 * [Bootstrap](https://www.getbootstrap.com/) - Bootstrap is a free and open-source front-end framework for developing websites and web applications.
+* [Heroku](https://www.heroku.com/) - Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+* [Node.js](https://www.nodejs.org/) - Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser.
+* [NPM](https://www.npmjs.com/) - npm is a package manager for the JavaScript programming language. It is the default package manager for the JavaScript runtime environment Node.js.
 
 ## Contributing
 
