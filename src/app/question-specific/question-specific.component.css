@@ -4,14 +4,6 @@
     margin-top: 3%;
 }
 
-@media (max-width: 575px) { 
-    .question-container {
-        margin-right: 3%;
-        margin-left: 3%;
-        margin-top: 3%;
-    }
-}
-
 .parent-container {
     min-height: 75vh;
 }
@@ -84,4 +76,12 @@
     height: 100%;
     margin-left: 1%;
     line-height: 1.5;
+}
+
+@media (max-width: 575px) { 
+    .question-container {
+        margin-right: 3%;
+        margin-left: 3%;
+        margin-top: 3%;
+    }
 }

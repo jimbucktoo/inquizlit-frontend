@@ -6,7 +6,7 @@ img {
     margin-right: auto;
 }
 
-.custom-container {
+.inquizlit {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 3%;
@@ -15,39 +15,19 @@ img {
     min-height: 80vh;
 }
 
-.form {
+.startContainer {
     margin: 0 auto;
     width: 300px;
 }
 
-.form-border {
-    border: 1px solid black;
-}
-
-.sign-button {
+.start {
     display: flex;
     justify-content: center;
     margin-top: 30px;
 }
 
-.sign-up-button {
-    margin-left: 10px;
-}
-
-#emailInput {
-    box-shadow: none;
-    border: 2px solid #007bff;
-    text-align: center;
-}
-
-#passwordInput {
-    box-shadow: none;
-    border: 2px solid #007bff;
-    text-align: center;
-}
-
 @media (max-width: 600px) { 
-    .custom-container {
+    .inquizlit {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 3%;
@@ -56,7 +36,7 @@ img {
         min-height: 80vh;
     }
 
-    .form {
+    .startContainer {
         margin: 0 auto;
         width: 70vw;
     }

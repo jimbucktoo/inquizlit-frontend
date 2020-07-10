@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
-import { HashLocationStrategy, LocationStrategy } from '@angular/common'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -11,7 +10,6 @@ import { QuestionSpecificComponent } from './question-specific/question-specific
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { FormsModule } from '@angular/forms'
 import { HttpClientModule} from '@angular/common/http'
-import { SignUpComponent } from './sign-up/sign-up.component'
 import { AddQuestionComponent } from './add-question/add-question.component'
 import { FooterComponent } from './footer/footer.component'
 
@@ -22,7 +20,6 @@ import { FooterComponent } from './footer/footer.component'
         QuestionsComponent,
         LoginComponent,
         QuestionSpecificComponent,
-        SignUpComponent,
         AddQuestionComponent,
         FooterComponent
     ],
@@ -33,7 +30,7 @@ import { FooterComponent } from './footer/footer.component'
         FormsModule,
         HttpClientModule,
     ],
-    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

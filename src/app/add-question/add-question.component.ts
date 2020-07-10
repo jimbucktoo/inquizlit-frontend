@@ -12,6 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router'
 })
 
 export class AddQuestionComponent implements OnInit {
+
     form: any
     tags = ['Culture Fit', 'Algorithms', 'Computer Science', 'Riddles']
     questions: any
@@ -24,7 +25,6 @@ export class AddQuestionComponent implements OnInit {
     constructor(private qsrvpost: AddQuestionService, private asrvpost: AddAnswerService, private route: ActivatedRoute, private router: Router, ) {}
 
     ngOnInit() {   
-
     }
 
     cancel() {   
@@ -34,16 +34,16 @@ export class AddQuestionComponent implements OnInit {
     newQuestion() {
         this.model.tag = this.model.tag.toLowerCase()
         this.qsrvpost.postQuestion(this.model)
-            .then(response =>{
-                return response[0].id
-            })  
-            .then((response) => {
-                this.modelAnswer.question_id = response
-                return this.asrvpost.postAnswer(this.modelAnswer)
-            })
-            .then(() => {
-                this.router.navigate(['/dashboard'])
-            })
+        .then(response =>{
+            return response[0].id
+        })  
+        .then((response) => {
+            this.modelAnswer.question_id = response
+            return this.asrvpost.postAnswer(this.modelAnswer)
+        })
+        .then(() => {
+            this.router.navigate(['/dashboard'])
+        })
     }
 
 }

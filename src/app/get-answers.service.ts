@@ -11,5 +11,5 @@ export class GetAnswersService {
     getData(){
         return this.http.get("https://inquizlit-backend.herokuapp.com/answers");
     };
-    
+
 };

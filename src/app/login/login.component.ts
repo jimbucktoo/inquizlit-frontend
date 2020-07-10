@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import {Router} from '@angular/router'
-import { SigninUser } from '../signin-user'
 import { AddNewUserService } from '../add-user.service'
+import { AuthService } from '../auth.service'
 
 @Component({
     selector: 'app-login',
@@ -11,22 +11,9 @@ import { AddNewUserService } from '../add-user.service'
 
 export class LoginComponent implements OnInit {
 
-    model = new SigninUser('', '')
-
-    constructor(private router: Router, private usrv: AddNewUserService) { }
-
-    onSubmit() {
-    }
+    constructor(public auth: AuthService, private router: Router, private usrv: AddNewUserService) { }
 
     ngOnInit() {
-    }
-
-    sendToSignUp() {
-        this.router.navigateByUrl('/signup')
-    }
-
-    sendToHome() {
-        this.router.navigateByUrl('/dashboard')
     }
 
 }

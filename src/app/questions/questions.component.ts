@@ -3,6 +3,7 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { GetQuestionsService } from '../get-questions.service'
 import { GetAnswersService } from '../get-answers.service'
+import { AuthService } from '../auth.service'
 
 @Component({
     selector: 'app-questions',
@@ -17,7 +18,7 @@ export class QuestionsComponent implements OnInit {
     answers: any
     filteredQuestions: any = []
 
-    constructor(private srv: GetQuestionsService, private asrv: GetAnswersService) { }
+    constructor(public auth: AuthService, private srv: GetQuestionsService, private asrv: GetAnswersService) { }
 
     ngOnInit() {
         this.getQuestions()
@@ -61,9 +62,9 @@ export class QuestionsComponent implements OnInit {
     upVoteQuestion(id) {
         fetch(`https://inquizlit-backend.herokuapp.com/questions/${id}/upvote`, {
             method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json charset=utf-8'
-            }
+        headers: {
+            'Content-Type': 'application/json charset=utf-8'
+        }
         }).then(response => {
             this.filteredQuestions.map(question => {
                 if (question.id === id) {
@@ -76,9 +77,9 @@ export class QuestionsComponent implements OnInit {
     downVoteQuestion(id) {
         fetch(`https://inquizlit-backend.herokuapp.com/questions/${id}/downvote`, {
             method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json charset=utf-8'
-            }
+        headers: {
+            'Content-Type': 'application/json charset=utf-8'
+        }
         }).then(response => {
             this.filteredQuestions.map(question => {
                 if (question.id === id) {
