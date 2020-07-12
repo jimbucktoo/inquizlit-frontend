@@ -9,7 +9,7 @@ export class AddNewUserService {
     constructor(private http:HttpClient) { }
 
     postUser(newUser: any){
-        fetch("https://inquizlit-backend.herokuapp.com/users", {
+        fetch("https://inquizlit.herokuapp.com/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
@@ -20,7 +20,7 @@ export class AddNewUserService {
     };
 
     sendUser(User: any){
-        fetch("https://inquizlit-backend.herokuapp.com/users", {
+        fetch("https://inquizlit.herokuapp.com/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"

@@ -9,7 +9,7 @@ export class GetQuestionsService {
     constructor(private http:HttpClient) { }
 
     getData(){
-        return this.http.get("https://inquizlit-backend.herokuapp.com/questions");
+        return this.http.get("https://inquizlit.herokuapp.com/questions");
     };
 
 };

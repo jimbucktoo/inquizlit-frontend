@@ -10,7 +10,7 @@ export class AddAnswerService {
 
     postAnswer(newAnswer: any)  {
         return (
-            fetch("https://inquizlit-backend.herokuapp.com/answers/", {
+            fetch("https://inquizlit.herokuapp.com/answers/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json; charset=utf-8"
